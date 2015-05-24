@@ -1,0 +1,17 @@
+{
+  "name": "package",
+  "version": "2.0.0",
+  "dependencies": {},
+  "author": "Catux",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-compass": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-jinja2": "latest",
+    "grunt-cli": "latest",
+    "bower": "latest",
+    "compass": "latest"
+  }
+}
