@@ -86,7 +86,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'app/src/templates',
-                    src: ['index.html', 'post_list.html', 'post_list_template.html', 'posts/*.html'],
+                    src: ['index.html', 'post_list.html', 'post_list_template.html', 'traduccio.html', 'posts/*.html'],
                     dest: 'app/public',
                     ext: '.html'
                 }]
