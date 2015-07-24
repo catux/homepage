@@ -6,8 +6,8 @@
 -------------------------------------------------- */
 
 body {
-  padding-top: 10%;
-  padding-bottom: 70px;
+  padding-top: 8%;
+  padding-bottom: 20px;
   color: $secondary-color;
   background-color: $primary-color;
 }
@@ -23,6 +23,7 @@ body {
   left: 0;
   z-index: 20;
 
+
   .container {
     padding-right: 0;
     padding-left: 0;
@@ -33,6 +34,35 @@ body {
     padding-right: 15px;
     padding-left: 15px;
   }
+
+
+  .navbar-header {
+    a {
+      color: $alt-color;
+      font-weight: bold;
+      font-size: small;
+
+      &:hover {
+        color: $alt-color;
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .navbar-links {
+    padding-top: 1.5%;
+    ul li a{
+      &:hover {
+        background-color: darken($primary-color, 5%);
+      }
+    }
+  }
+}
+
+
+.navbar-header img {
+  padding-top: 5px;
 }
 
 .navbar-wrapper .navbar .container {
@@ -49,7 +79,7 @@ body {
 
   .item {
     height: 500px;
-    background-color: #777;
+    background-color: $secondary-color;
   }
 }
 
@@ -58,7 +88,7 @@ body {
 }
 
 .fletxeta {
-  margin-top: 200%;
+  margin-top: 150%;
 }
 
 .carousel-inner > .item > img {

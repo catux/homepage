@@ -145,7 +145,7 @@ def write_post_file(post):
             post['creator']['display_name'],
             post['date'],
             ', '.join(category['category_name'] for category in post['categories']),
-            post['content'], #
+            post['content'],
             ''.join(comments)
         )
         f.write(content.encode('utf-8'))
