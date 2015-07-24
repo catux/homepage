@@ -2,17 +2,19 @@
 import os
 import re
 import codecs
+import simplejson as json
 
 template = u"""
-{{% extends 'base.html' %}}
+{{% extends 'post_list_template.html' %}}
 
-{{% block content %}}
-<h1> Arxiu del blog </h1>
+{{% block links %}}
  {0}
 {{% endblock %}}
 """
 
 LINKS = []
+
+HOST = json.loads(open('app/src/templates/context/_all.json').read()).get('homepage')
 
 for root, _, files in os.walk('app/src/templates/posts/'):
     for name in files:
@@ -25,13 +27,13 @@ for root, _, files in os.walk('app/src/templates/posts/'):
             rel_path = os.path.relpath(filename, 'app/src/templates/')
             LINKS.append((
                 post_date,
-                '<a href="http://localhost:9000/%s">%s ( %s )</a>'
-                % (rel_path, title, post_date)
+                '<li class="list-group-item"><a class="blog-post" href="%s%s">%s <span class="badge blog-date pull-right">%s</span></a></li>'
+                % (HOST, rel_path, title, post_date)
                 )
-            )  # TODO localhost should be picked from general config
+            )
 
 
 with open('app/src/templates/post_list.html', 'wb') as f:
     ordered_links = sorted(LINKS, key=lambda x: x[0], reverse=True)
-    content = template.format('<br>'.join([x[1] for x in ordered_links]))
+    content = template.format(''.join([x[1] for x in ordered_links]))
     f.write(content.encode('utf-8'))
