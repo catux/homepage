@@ -23,12 +23,13 @@ for root, _, files in os.walk('app/src/templates/posts/'):
             content = f.read()
             title = re.findall(r'title %\}([^}]+)\{', content)[0][6:-1]
             post_date = re.findall(r'post_date %\}([^}]+)\{', content)[0][6:-1]
+            author = re.findall(r'author %\}([^}]+)\{', content)[0][6:-1]
 
             rel_path = os.path.relpath(filename, 'app/src/templates/')
             LINKS.append((
                 post_date,
-                '<li class="list-group-item"><a class="blog-post" href="%s%s">%s <span class="badge blog-date pull-right">%s</span></a></li>'
-                % (HOST, rel_path, title, post_date)
+                '<li class="list-group-item"><a class="blog-post" href="%s%s">%s <div class="pull-right hidden-xs"><span class="badge blog-date">%s</span>&nbsp;<span class="badge blog-date">%s</span></div></a></li>'
+                % (HOST, rel_path, title, author, post_date)
                 )
             )
 

@@ -128,7 +128,7 @@ def write_post_file(post):
 
     """
     with open('app/src/templates/posts/' + post_name + '.html','wb') as f:
-        comment_template = u'<p class="comment">{0}<hr>Escrit per {1} el {2}</p>'
+        comment_template = u'<li class="list-group-item comment">{0}<p class="comment-author">Escrit al {2} per {1}</p></li>'
         comments = []
         for comment in post['comments']:
             d = comment['date']
@@ -146,7 +146,7 @@ def write_post_file(post):
             post['date'],
             ', '.join(category['category_name'] for category in post['categories']),
             post['content'],
-            ''.join(comments)
+            ''.join(comments) if comments else '<li class="list-group-item">Sense comentaris</li>'
         )
         f.write(content.encode('utf-8'))
 

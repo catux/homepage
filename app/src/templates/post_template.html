@@ -2,42 +2,59 @@
 
 
 {% block content %}
-    {#  TODO breadcrumbs #}
+    <div class="container-fluid">
 
-    <h1>
-        {% block title %}
-            Default title
-        {% endblock %}
-    </h1>
+        <div class="post">
+            <a href="{{ homepage }}post_list.html">
+                <i class="fa fa-chevron-left"></i>
+                Arxius
+            </a>
 
-    <h2>
-        Per
-        {% block author %}
-            Default Author
-        {% endblock %}
+            <h1>
+                {% block title %}
+                    Default title
+                {% endblock %}
+            </h1>
 
-        el
-        {% block post_date %}
-            No Date
-        {% endblock %}
-    </h2>
+            <h3>
+                Escrit al
+                {% block post_date %}
+                Indefinit
+                {% endblock %}
+                per
+                {% block author %}
+                Anónim
+                {% endblock %}
+            </h3>
 
-    <p>Categories:
-        {% block categories %}
-            Default categories
-        {% endblock %}
-    </p>
+            <p>
+                {% block post %}
+                    Sense contingut
+                {% endblock %}
+            </p>
 
-    <p>
-        {% block post %}
-            No Content
-        {% endblock %}
-    </p>
+            <h3>
+                Categories:
+                {% block categories %}
+                    Default categories
+                {% endblock %}
+            </h3>
 
-    <hr />
-    <p>
-        {% block comments %}
-            No Comments
-        {% endblock %}
-    </p>
+            <hr />
+            <h1>Comentaris</h1>
+            <ul class="list-group">
+                {% block comments %}
+                    Sense Comentaris
+                {% endblock %}
+            </ul>
+
+
+            <a href="{{ homepage }}post_list.html">
+                <i class="fa fa-chevron-left"></i>
+                Arxius
+            </a>
+        </div>
+
+    </div>
+
 {% endblock %}

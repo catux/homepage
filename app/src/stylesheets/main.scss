@@ -131,8 +131,6 @@ body {
 /* BLOG ARCHIVE
 -------------------------------------------------- */
 
-
-
 .arxius {
   padding-bottom: 50px;
 
@@ -150,4 +148,32 @@ body {
     border: 1px solid $secondary-color;
   }
 
+}
+
+/* SINGLE POSTS
+-------------------------------------------------- */
+.post {
+  margin-top: 10px;
+  padding-left: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: $alt-color;
+
+  h1 {
+    color: darken($secondary-color, 50%);
+  }
+
+  h3 {
+    font-size: small;
+  }
+
+  p {
+    color: black;
+    padding-right: 5%;
+  }
+
+  .comment-author {
+    padding-top: 5px;
+    text-align: right;
+  }
 }
