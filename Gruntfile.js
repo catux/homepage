@@ -43,13 +43,21 @@ module.exports = function(grunt) {
                 files: ['**/*.{scss,sass}'],
                 tasks: ['compass:dev']
             },
-            jinja2: {
+            jinja: {
                 files: ['app/src/templates/**'],
-                tasks: ['jinja2:dev']
+                tasks: ['jinja:main']
             },
             copy: {
                 files: ['app/src/images/*', 'app/src/fonts/*'],
                 tasks: ['copy:main']
+            },
+            concat: {
+                files: ['app/src/js/*'],
+                tasks: ['concat:dev']
+            },
+            shell: {
+                files: ['app/src/templates/posts/**'],
+                tasks: ['shell:generate_post_list']
             }
         },
         compass: {
@@ -69,16 +77,16 @@ module.exports = function(grunt) {
                 }
             },
         },
-        jinja2: {
+        jinja: {
             main: {
                 options:{
-                    template_path: 'app/src/templates',
-                    context_path: 'app/src/templates/context'
+                    templateDirs: ['app/src/templates'],
+                    contextRoot: 'app/src/templates/context'
                 },
                 files: [{
                     expand: true,
                     cwd: 'app/src/templates',
-                    src: ['index.html', 'posts/*.html'],
+                    src: ['index.html', 'post_list.html', 'posts/*.html'],
                     dest: 'app/public',
                     ext: '.html'
                 }]
@@ -102,6 +110,33 @@ module.exports = function(grunt) {
                 ]
 
             }
+        },
+        concat: {
+            dev: {
+                src: [
+                    'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+                    'bower_components/holderjs/holder.js',
+                    '/app/src/js/*.js'
+                ],
+                dest: 'app/public/js/main.js'
+            },
+            prod: {
+                src: [
+                    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+                    'bower_components/jquery/dist/jquery.js',
+                    'app/src/js/*.js'
+                ],
+                dest: 'app/public/js/main.js'
+            }
+        },
+        shell: {
+            generate_post_list: {
+                options: {
+                    stdout: true
+                },
+                command: 'python generate_post_list.py'
+            }
         }
     });
 
@@ -110,12 +145,28 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-jinja2');
+    grunt.loadNpmTasks('grunt-jinja');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-shell');
 
 
     // Default task(s).
-    grunt.registerTask('default', ['connect:livereload', 'compass:dev', 'jinja2', 'copy', 'watch']);
+    grunt.registerTask('default', [
+        'connect:livereload',
+        'compass:dev',
+        'concat:dev',
+        'shell:generate_post_list',
+        'jinja',
+        'copy',
+        'watch'
+    ]);
     // prod build
-    grunt.registerTask('prod', ['compass:prod', 'jinja2', 'copy']);
+    grunt.registerTask('prod', [
+        'compass:prod',
+        'shell:generate_post_list',
+        'jinja',
+        'concat:prod',
+        'copy'
+    ]);
 
 };

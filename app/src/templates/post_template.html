@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <h1>
+        {% block title %}
+            Default title
+        {% endblock %}
+    </h1>
+
+    <h2>
+        Per
+        {% block author %}
+            Default Author
+        {% endblock %}
+
+        el
+        {% block post_date %}
+            No Date
+        {% endblock %}
+    </h2>
+
+    <p>Categories:
+        {% block categories %}
+            Default categories
+        {% endblock %}
+    </p>
+
+    <p>
+        {% block post %}
+            No Content
+        {% endblock %}
+    </p>
+
+    <hr />
+    <p>
+        {% block comments %}
+            No Comments
+        {% endblock %}
+    </p>
+{% endblock %}

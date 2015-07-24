@@ -1,3 +1,98 @@
 @import "variables";
-@import "../../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap-compass.scss";
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "../../../bower_components/fontawesome/scss/font-awesome.scss";
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+
+body {
+  padding-top: 10%;
+  padding-bottom: 70px;
+  color: $secondary-color;
+  background-color: $primary-color;
+}
+
+
+/* NAVBAR
+-------------------------------------------------- */
+
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+    font-weight: bold;
+  }
+
+  .navbar {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CAROUSEL
+-------------------------------------------------- */
+
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+
+  .item {
+    height: 500px;
+    background-color: #777;
+  }
+}
+
+.carousel-caption {
+  z-index: 10;
+}
+
+.fletxeta {
+  margin-top: 200%;
+}
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .navbar-wrapper {
+    margin-top: 20px;
+
+    .container {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .navbar {
+      padding-right: 0;
+      padding-left: 0;
+      border-radius: 4px;
+    }
+  }
+
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+}

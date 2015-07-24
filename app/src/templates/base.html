@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="cat">
     <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ homepage }}images/favicon.ico">
+
+    <title>Catux</title>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ homepage }}css/main.css">
 </head>
 <body>
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="{{ homepage }}"><img src="holder.js/240x60"></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ homepage }}post_list.html">Blog</a></li>
+                            <li><a href="{{ homepage }}fotos">Fotos</a></li>
+                            <li><a href="{{ homepage }}traduccio">Traducció</a></li>
+                            <li><a href="{{ homepage }}planet">Món (Planet)</a></li>
+                            <li><a href="{{ homepage }}llistes">Llistes de correu</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div> <!-- /.navbar-wrapper -->
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div> <!-- /.container -->
+
+    <div class="container">
+        <footer class="catux-footer">
+            <p>
+                Tot el contingut de Catux està subjecte sota la nova versió de la llicència de
+                <a href="http://creativecommons.org/licenses/by/2.5/es/deed.ca">Creative Commons</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="{{ homepage }}js/main.js"></script>
 
 </body>
 </html>

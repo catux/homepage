@@ -3,6 +3,7 @@ backup.xml
 bower_components/
 node_modules/
 app/public/
+app/src/templates/post_list.html
 venv/
 .sass-cache/
 
