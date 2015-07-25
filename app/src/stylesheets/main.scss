@@ -74,17 +74,21 @@ body {
 -------------------------------------------------- */
 
 .carousel {
-  height: 500px;
-  margin-bottom: 60px;
+  min-height: 600px;
+  //margin-bottom: 60px;
 
   .item {
-    height: 500px;
+    min-height: 600px;
     background-color: $secondary-color;
   }
 }
 
 .carousel-caption {
   z-index: 10;
+}
+
+.titol-portada {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .fletxeta {
@@ -96,7 +100,7 @@ body {
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 500px;
+  min-height: 500px;
 }
 
 
@@ -120,8 +124,8 @@ body {
   }
 
   .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
+    margin-bottom: 18px;
+    font-size: 20px;
     line-height: 1.4;
   }
 
