@@ -116,15 +116,14 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-                    'bower_components/holderjs/holder.js',
                     '/app/src/js/*.js'
                 ],
                 dest: 'app/public/js/main.js'
             },
             prod: {
                 src: [
-                    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
                     'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
                     'app/src/js/*.js'
                 ],
                 dest: 'app/public/js/main.js'
