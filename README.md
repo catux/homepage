@@ -8,6 +8,8 @@ virtualenv venv
 . venv/bin/activate
 pip install -r requirements.txt
 grunt
+???
+PROFIT!
 ```
 
 
@@ -15,4 +17,6 @@ grunt
 Package
 =======
 
-x
+`grunt prod`
+
+Results in `/app/public/`
