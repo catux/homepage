@@ -189,4 +189,17 @@ body {
 
 .traduccio {
   background-color: $alt-color;
+
+  p {
+    font-size: medium;
+  }
+  
+  .thumbnail h4 {
+    margin-left: 20px;
+  }
+
+  .thumbnail p {
+    margin-left: 20px;
+    font-size: smaller;
+  }
 }
