@@ -44,6 +44,7 @@
     <hr />
 
     <h2>Llista de programes que hem traduït fins ara per odre alfabètic</h2>
+    <br >
 
     <div class="modal fade" id="thumbnail-modal" tabindex="-1" role="dialog" aria-labelledby="thumbnail-modal-label" aria-hidden="true">
           <div class="modal-dialog">
@@ -55,150 +56,24 @@
     </div><!-- /.modal -->
 
     <div class="row">
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>cups</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="https://www.cups.org/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
+
+        {% for traduccio in traduccions %}
+            <div class="col-sm-6 col-md-3 miniatura">
+                <div class="thumbnail">
+                    <img src="{{ homepage }}images/traduccio-screens/{{ traduccio.imatge }}" width="255">
+                    <div class="caption">
+                        <h4>{{ traduccio.nom }}</h4>
+                        <p>
+                            {{ traduccio.descripcio }}
+                        </p>
+                        <p>
+                            <a role="button" class="btn btn-primary" href="{{ traduccio.link }}">Enllaç <i class="fa fa-external-link"></i></a>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>e2fsprogs</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://e2fsprogs.sourceforge.net/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>freedink</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://www.gnu.org/software/freedink/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>geeqie</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://geeqie.sourceforge.net/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>gPlanarity</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://web.mit.edu/xiphmont/Public/gPlanarity.html">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>grep</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://www.gnu.org/software/grep/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>grub</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://www.gnu.org/software/grub/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>Lordsawar</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://www.nongnu.org/lordsawar/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>Pydance</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="https://icculus.org/pyddr/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>tar</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://www.gnu.org/software/tar/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>Unknown Horizons</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="http://www.unknown-horizons.org/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-                <img src="holder.js/200x200">
-                <h4>Warzone 2100</h4>
-                <p>
-                    Pim Pam mola i tal
-                </p>
-                <p>
-                    <a class="btn btn-primary" href="https://wz2100.net/">Enllaç <i class="fa fa-external-link"></i></a>
-                </p>
-            </div>
-        </div>
+        {% endfor %}
+
     </div>
 
 

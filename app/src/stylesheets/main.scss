@@ -190,16 +190,20 @@ body {
 .traduccio {
   background-color: $alt-color;
 
-  p {
-    font-size: medium;
-  }
-  
-  .thumbnail h4 {
-    margin-left: 20px;
+  h1 {
+    color: darken($secondary-color, 50%);
   }
 
-  .thumbnail p {
-    margin-left: 20px;
-    font-size: smaller;
+  .miniatura  {
+    
+    .thumbnail img {
+      height: 120px;
+      width: 170px;
+    }
+
+    .thumbnail {
+      height: 310px;
+    }
   }
+
 }
