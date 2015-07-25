@@ -1,0 +1,29 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Curiositat: línies del man
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2006-08-15 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Algunes p&agrave;gines de manual de Unix/Linux s&oacute;n especialment llargues. Per exemple, el man mplayer a simple vista &eacute;s molt llarg. Mirant al mateix hi ha unes 7000 l&iacute;nies, que si s&#39;importen a l&#39;OpenOffice amb una lletra de 10 s&oacute;n 122 p&agrave;gines.<br /> <br /> Vaig tenir curiositat per saber el &quot;man m&eacute;s llarg&quot;. En el meu sistema (no amb tots els paquets de Debian, tamb&eacute; es podria mirar) el m&eacute;s llarg &eacute;s el ethereal-filter, amb 143707 l&iacute;nies que fan unes 250 p&agrave;gines (impressionant!)<br /> <br /> El r&agrave;nquing dels m&eacute;s llargs (sempre al meu sistema):<br /> <br /> <li>gcc 4.1: 11049 l&iacute;nies, unes 185 p&agrave;gines<br /> </li><li>gcc 3.3: 8915 l&iacute;nies, unes 160 p&agrave;gines<br /> </li><li>mplayer: 7517 l&iacute;nies, 122 p&agrave;gines<br /> </li><li>smb.conf: 7305 l&iacute;nies, unes 115 o 120 p&agrave;gines<br /> <br /> Qui em torni a dir &quot;he llegit tot el man del gcc i no he trobat aquesta opci&oacute;&quot; li donar&eacute; un premi: o al millor lector de mans o a mentider :-)</li></span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Re: Curiositat: línies del man 
+s/he llegit tot el man/he buscat malament/g :-)<p class="comment-author">Escrit al 2006-12-29 16:50:03 per Anònim</p></li>
+    {% endblock %}
+
+    

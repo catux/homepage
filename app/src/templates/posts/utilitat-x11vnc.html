@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Utilitat: x11vnc
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2008-12-07 17:40:38
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <p>A vegades ens interessa compartir o que ens comparteixin un escriptori: veure el mateix a dues pantalles, de dos llocs diferents (per ensenyar alguna cosa, o bé demanar alguna cosa, etc.)</p><p>A algunes distribucions (com ara Ubuntu) es pot compartir des de menús (per exemple, <a href="http://www.ubuntugeek.com/share-your-ubuntu-desktop-using-remote-desktop.html">veure aquesta pàgina)</a></p><p>Amb altres distribucions o altres vegades ens pot interessar fer-ho des de la línia de comandes i una manera és utilitzant el x11vnc .</p><p>Podem fer una cosa tant senzill com entrar per ssh (o que l'altre usuari ho escrigui).</p><p>Després d'executar <strong>x11vnc</strong> podem accedir, des del vncviewer, directament a aquest ordinador i es compartirà l'escriptori. No es farà servir un escriptori nou, sinó que és el mateix que l'usuari veu. Hi ha opcions per posar-hi contrasenya (ull! per defecte no en posa!) </p>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Jo ho he fet servir la feina amb sistemes operatius propietaris  :upset i va molt be! Jo diria que millor que altres programes semblants de pagament!  8)<p class="comment-author">Escrit al 2008-12-14 16:44:46 per Mecatxis</p></li>
+    {% endblock %}
+
+    

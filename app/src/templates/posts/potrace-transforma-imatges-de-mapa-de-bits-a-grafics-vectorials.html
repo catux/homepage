@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Potrace: Transforma imatges de mapa de bits a gràfics vectorials
+    {% endblock %}
+
+    {% block author %}
+        Mecatxis
+    {% endblock %}
+
+    {% block post_date %}
+        2008-06-05 19:41:02
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Iniciació
+    {% endblock %}
+
+    {% block post %}
+        <p>Un nou article de <a href="http://debaday.debian.net/2008/01/20/lyx-a-text-editor-that-stays-out-of-the-way/">Deb a Day</a>  traduït a la web de Catux: potrace: Transforma imatges de mapa de bits a gràfics vectorials </p><p>Publicat el 19 de Maig del 2008 per <strong>András Horváth</strong>  	</p> 	 <p>A vegades pots trobar-te que necessites una determinada imatge en alta resolució. Sobretot si ets un dissenyador gràfic (o un tatuador), vols tenir uns resultats de qualitat en augmentar la mida d'una imatge de baixa resolució.</p>  <p>Per aconseguir-ho sense fer servir un programa traçador, tens la següent possibilitat: Utilitzant un programa de gràfics de píxels com ara Gimp, pots canviar la mida de la imatge amb el millor mètode de mostrejar i aplicar-li un filtre de difuminat selectiu. La majoria de vegades no s'obté la qualitat necessària </p>Hi ha una petita però potent utilitat anomenada <a href="http://potrace.sourceforge.net/">potrace</a> desenvolupada per Peter Selinger, un professor de matemàtiques de la universitat de Dalhousie. <br /><br />Amb un programa traçador com ara <font face="DejaVu Sans Mono"><span>potrace </span></font>només has d'indicar una imatge com a entrada, i obtindràs el resultat en el <font face="Times New Roman, serif"><span><a href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics">format SVG</a> standard. </span></font> <font face="DejaVu Sans Mono"><span>potrace</span></font>pot produir també una sortida en format PDF. <p>Exemple en línia de comandes: </p>  <p><font face="DejaVu Sans Mono"><span>$ potrace -s imatge.bmp</span></font> </p> <p>Amb aquest procediment,el programa transforma els píxels de la imatge en corbes plenes que tenen resolució infinita amb suaus línies encara que ampliem o reduïm.</p>     <p style="margin-bottom: 0cm">La meva experiència personal treballant com a dissenyador gràfic,<font face="Times New Roman, serif"> </font><font face="DejaVu Sans Mono"><span>potrace</span></font> m'ha donat molt bons resultats amb moltes imatges. Comparat amb altres programes propietaris molt cars, quan la imatge original te terminacions punxegudes, <font face="DejaVu Sans Mono"><span>potrace</span></font> dona terminacions punxegudes al resultat i altres programes donaven resultats amb terminacions corbes. Això feia que calgués molta correcció manual. </p> <br /><br />   <p>A favor (comparat amb altres programes):</p>   	 <ul><li>Molt bons resultats</li> <li>Força ràpid</li> <li>Es pot fer servir fàcilment des d'una línia de comandes</li> <li>Es pot fer servir des del programa lliure de gràfic vectorial <a href="http://www.inkscape.org/">Inkscape</a> (Camí/ Vectoritza un mapa de bits o Majúscules+Alt+B</li></ul> <p>En contra:</p> <ul><li>Només treballa amb dos colors (blanc i negre). Encara no permet processar altres colors</li><li><font face="DejaVu Sans Mono"><span>potrace</span></font>	no suporta imatges PNG com entrada (encara que les imatges es poden convertir des de PNG amb una pila de programes lliures)</li></ul> <p>Això és un exemple tret de la pàgina del projecte, es pot veure el mapa de bits original i la imatge vectoritzada:</p>  <p><a name="image433" title="image433"></a><img src="http://debaday.debian.net/wp-content/uploads/2008/05/head-orig3.png" border="0" alt="Original bitmap" width="171" height="138" align="bottom" name="Imatges1" /> <img src="http://debaday.debian.net/wp-content/uploads/2008/05/head-smooth3.png" border="0" alt="potrace output" width="171" height="138" align="bottom" name="Imatges2" /></p>    <p style="margin-bottom: 0cm">El paquet està disponible tant a Debian com a Ubuntu des de fa molt temps.</p>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

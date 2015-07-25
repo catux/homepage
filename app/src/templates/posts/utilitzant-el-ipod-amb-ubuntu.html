@@ -1,0 +1,34 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Utilitzant el iPod amb ubuntu
+    {% endblock %}
+
+    {% block author %}
+        franhp
+    {% endblock %}
+
+    {% block post_date %}
+        2006-06-30 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Trucs
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">En aquest article  s&#39;intenta fer que aquells usuaris que encara utilitzen Windows o Mac OS X perqu&egrave; estan lligats a iTunes, puguin ser lliures definitivament.<br /> A l&#39;article s&#39;inclou un manual sobre com instal&middot;lar suport per poder pujar videos al ipod i tamb&eacute; els trucs que faig servir per poder jugar-hi.<br /> <br /> Properament es penjaran articles sobre <a href="http://ipodlinux.org/">ipodlinux</a> i podcasts.</span> <br />    Si alg&uacute; de vosaltres poseeix un iPod video de 30 o 60 GB haureu comprovat que no hi ha manera de poder pujar-hi videos, sino &eacute;s utilitzant iTunes, el qual nom&eacute;s funciona sota sistemes propietaris, o emulant una versi&oacute; antiga que no ho t&eacute; gaire suportat. B&eacute; doncs, ja tenim una soluci&oacute;:<br /> <br /> Primer instal&middot;lem algunes cosetes que necessita el nostre sistema ...<br /> <br /> sudo apt-get remove libmp4v2-0 libmp4v2-dev faac gstreamer0.8-faac libfaac0 libfaac-dev<br /> <br /> sudo apt-get install libexpat1-dev libglade2-0 libglade2-dev flex libid3tag0 libid3tag0-dev libxml-parser-perl libtool automake checkinstall libsdl1.2-dev<br /> <br /> <br /> Ara ve la part complicada, compilar (si no s&#39;&eacute;s expert, si us plau contacteu amb el &quot;linuxer&quot; m&eacute;s pr&ograve;xim o demaneu ajuda als pares ;-) ).<br /> <br /> <br /> mkdir ipodvideo<br /> <br /> cd ipodvideo<br /> <br /> wget http://internap.dl.sourceforge.net/sourceforge/mpeg4ip/mpeg4ip-1.4.1.tar.gz<br /> tar xzf mpeg4ip-1.4.1.tar.gz<br /> <br /> cd mpeg4ip-1.4.1<br /> <br /> ./bootstrap --disable-server<br /> <br /> sudo cp mpeg4ip_config.h /usr/local/include<br /> <br /> sudo cp include/mpeg4ip.h include/mpeg4ip_version.h /usr/local/include<br /> <br /> ./configure<br /> <br /> sed -i &quot;s/SUBDIRS = \. test util/SUBDIRS = \./&quot; lib/mp4v2/Makefile<br /> <br /> make<br /> <br /> sudo checkinstall -D make install<br /> <br /> <br /> <br /> I ara libgpod<br /> <br /> <br /> <br /> wget http://umn.dl.sourceforge.net/sourceforge/gtkpod/libgpod-0.3.2.tar.gz<br /> <br /> tar xzf libgpod-0.3.2.tar.gz<br /> <br /> cd libgpod-0.3.2/<br /> <br /> ./configure<br /> <br /> make<br /> <br /> sudo checkinstall -D make install<br /> <br /> <br /> <br /> Copiem unes quantes llibreries ...<br /> <br /> <br /> <br /> sudo cp /usr/local/lib/libgpod* /usr/lib <br /> <br /> i seguim ...<br /> <br /> <br /> wget http://easynews.dl.sourceforge.net/sourceforge/gtkpod/gtkpod-0.99.4.tar.gz<br /> <br /> tar xzf gtkpod-0.99.4.tar.gz<br /> <br /> cd gtkpod-0.99.4<br /> <br /> ./configure<br /> <br /> make<br /> <br /> sudo checkinstall -D make install<br /> <br /> <br /> NOTA: Heu de canviar el nom del programa de gtkpod-0.99.4 a gtkpod en el pas de checkinstall<br /> <br /> <br /> Oleeeee, ja ho tenim tot, i ara qu&eacute;?<br /> <br /> sudo apt-get build-dep ffmpeg<br /> <br /> sudo apt-get install liblame-dev libfaad2-dev libfaac-dev libxvidcore4-dev liba52-0.7.4 liba52-0.7.4-dev<br /> <br /> apt-get source ffmpeg<br /> <br /> cd ffmpeg-*/<br /> <br /> ./configure --enable-gpl --enable-pp --enable-zlib --enable-vorbis \<br />         --enable-libogg --enable-theora --enable-a52 --enable-dts \<br />         --enable-dc1394 --enable-libgsm --disable-debug --enable-mp3lame \<br />         --enable-faad --enable-faac --enable-xvid<br /> <br /> make<br /> <br /> sudo checkinstall -D make install<br /> <br /> Tornem a instal&middot;lar el que haviem tret ...<br /> <br /> <br /> <br /> sudo apt-get install libmp4v2-0 libmp4v2-dev faac gstreamer0.8-faac libfaac0 <br /> libfaac-dev<br /> <br /> I ja esta!!! Ara, amb un senzill script, podrem passar els nostres videos a un format que l&#39;iPod sigui capa&ccedil; d&#39;entendre. Crearem ipodvidenc.sh i hi enganxarem.<br /> <br /> <br /> <br /> #!/bin/bash<br /> ## ipodvidenc - The iPod Video Encoder for Linux.<br /> ## Created by Eric Hewitt, January 9, 2006.<br /> ## Released under the GPL.  Go nuts.<br /> <br /> input_file=$1<br /> <br /> echo &quot;Com voldria que s&#39;anomen&eacute;s el vostre video?&quot;<br /> <br /> read output_file_name<br /> <br /> echo &quot;$output_file_name est&aacute; a $PWD. Li sembla b&eacute;? [s/n]&quot;<br /> <br /> read output_file_loc_permis<br /> <br /> if [ $output_file_loc_permis = &#39;n&#39; ] || [ $output_file_loc_permis = &#39;N&#39; ]<br /> then<br />         echo &quot;On vols desar $output_file_name.mov?&quot;<br />         read output_dir<br /> else<br />         output_dir=$PWD<br /> fi<br /> <br /> ffmpeg -i &quot;${input_file}&quot; -f mp4 -vcodec mpeg4 -maxrate 1000 -b 700 -qmin 3 -qmax 5 -bufsize 4096 -g 300 -acodec aac -ab 192 -s 320x240 -aspect 4:3 &quot;${output_dir}/${output_file_name}.mov&quot;<br /> <br /> <br /> I ara, copiem el video a on estigui el script, executem &quot;sh ipodvidenc.sh video.avi&quot; responem a les preguntes i pam papapatam! el nostre video llest per pujar al ipod utilitzant gtkpod.<br /> <br /> <h2>Trucs</h2><br /> <br /> Muntar ipod: sudo mount /dev/sda2 /lloc/triat<br /> <br /> <br /> Triem gtkpod i al men&uacute; Edit -- Edit Preferences -- &quot;iPod mount point&quot; escrivim /lloc/triat . Anem a la secci&oacute; &quot;Tools&quot; i escrivim &quot;totem %s&quot; on posa &quot;Command forPlay Now&quot;. Tanquem i el tornem a encendre.<br /> Per desmuntar el ipod:sudo eject -v /dev/sda2.<br /> <br /> NOTA! Prometo articles sobre <a href="http://www.catux.org/index.php?contingut=articles&amp;num=114">ipodlinux</a> i podcasts<br /> <br /> Font: <a href="http://www.ubuntuforums.org/showthread.php?t=114946">http://www.ubuntuforums.org/showthread.php?t=114946</a>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Re: Utilitzant el iPod amb Ubu Un tutorial molt util, jo ja havia fet gairebe tot, excepte el fet de passar els videos desde linux.
+
+Afegiria que probessiu el programa gpixpod, per a sincronitzar les fotos que tingueu, es molt bo. Permet crear albums i a diferents tamanys per a poguer veure tant al pod com a la tele. Si no teniu el cable per veure a la tele us u recomano (ebay 9&#8364;).
+
+També faria servir un conector del evolution que sincronitza els contactes i les agendes (jo no l'uso tant, pero pot ser util).
+
+Gracies pel tutorial Grap.<p class="comment-author">Escrit al 2006-12-29 16:47:18 per pachu</p></li>
+    {% endblock %}
+
+    

@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Vim (vi millorat)
+    {% endblock %}
+
+    {% block author %}
+        Reguitzell
+    {% endblock %}
+
+    {% block post_date %}
+        2004-04-05 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Iniciació
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Petita guia d&#39;utilitzaci&oacute; del fant&agrave;stic editor vim, explica les funcions b&agrave;siques del porta-retalls, i alguna altra cosa. </span><br />    <div id="article" class="article_normal"><h2>Introducci&oacute;</h2><br /> <br /> Aquest vol ser un petit manual que serveixi com a guia de refer&egrave;ncia r&agrave;pida, sense arrivar a abarcar totes les possibilitats d &#39;aquest potent editor.<br /> <br /> <strong>1. Comen&ccedil;ar</strong>: <br /> per comen&ccedil;ar es pot fer o executant vim i prou o donant com a parametre el nom d &#39;un arxiu.<br /> <br /> Ex: $vim<br /> Ex: $vim /home/user/arxiu.txt<br /> <br /> <br /> <strong>2. Funcionament</strong>:<br /> en mode normal el vim funciona per shorcuts, una s&egrave;rie de combinacions de tecles que produeixen accions, a continuaci&oacute; els de &uacute;s m&egrave;s habitual.<br /> <br /> i --&gt; es posa en mode insertar podem escriure(esc per tornar a mode normal).<br /> <br /> x --&gt; elimina el caracter del cursor.<br /> <br /> dd --&gt; elimina una linia i guarda al bufer.<br /> <br /> [n]dd --&gt; elimina [n] linies i guarda al buffer.<br /> <br /> yy --&gt; copia 1 linia al buffer.<br /> <br /> [n]yy --&gt; copia [n] linies al buffer.<br /> <br /> p --&gt; enganxa el qeu hi ha al buffer.<br /> <br /> o --&gt; comen&ccedil;a una nova linia i es posa en mode insertar.<br /> <br /> r --&gt; es posa en espera per rempla&ccedil;ar el caracter del cursor per la tecla pitjada.<br /> <br /> R --&gt; es posa en mode Reempl&ccedil;ar (tot el que escrivim va reempla&ccedil;ant el que hi ha al cursor)<br /> <br /> a --&gt; es posa al cursor seguent i en mode insertar.<br /> <br /> . --&gt; repetix ultima acci&oacute;.<br /> <br /> u --&gt; desf&agrave; &uacute;ltima acci&oacute;.<br /> <br /> cw --&gt; esborra desde el cursor fins a final de la paraula o punt i es posa en mode insertar.<br /> <br /> dw --&gt; esborra desde el cursor fins al final de la paraula o punt.<br /> <br /> d$ --&gt; esborra desde el cursor fins al final de la linia.<br /> <br /> k --&gt; un cursor amunt.<br /> <br /> j --&gt; un cursor avall.<br /> <br /> h --&gt; un cursor esquerra.<br /> <br /> l --&gt; un cursor dreta.<br /> 		<br /> t --&gt; avan&ccedil;a una tabulacio.<br /> <br /> / --&gt;escrivim la ocurr&egrave;ncia i premem enter, i ens marca amb un fons diferent totes les ocurr&egrave;ncies dins el document.<br /> <br /> <strong>3. Comandes</strong>:<br /> les comandes al vim van precedides del signe dos punts &#39;:&#39;, premem &#39;:&#39; i des pres la comanda,algunes comandes b&agrave;siques:<br /> <br /> :q --&gt; sortir.<br /> <br /> :q! --&gt; sortir sense guardar, havent fet modificacions.<br /> <br /> :w --&gt; guardar, si a l &#39;obrir no hem donat un nom de fitxer, el podem donar ara com a parametre de :w, poden d &#39;aquesta manera tambe habilitar el guardar com.<br /> <br /> :w! --&gt; for&ccedil;ar l &#39;escriptura.<br /> <br /> :wq --&gt; guardar i marxar.<br /> <br /> :wq! --&gt; guardar for&ccedil;ant i marxar.<br /> <br /> <strong>Comandes &Uacute;tils</strong><br /> <br /> :syntax on --&gt; habilita la diferenciacio per colors en els scripts.<br /> <br /> :set mouse=a --&gt; habilita el ratoli al vim, molt &uacute;til pels ratolins amb rodeta.<br /> <br /> :help --&gt; mostra el menu d&#39;ajuda.<br /> <br /> </div>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Re: Vim (vi millorat) No sembla reflectit al manual: si es vol passar de mode inserció (havent apretat la "i") a mode per insertar comandes, es pot fer amb ESC.<p class="comment-author">Escrit al 2006-12-25 21:26:14 per Anònim</p></li><li class="list-group-item comment">Gràcies Doncs això, que gràcies, que això del ratolí no ho sabia jo, i trobo que és molt útil ;)<p class="comment-author">Escrit al 2006-12-25 21:25:16 per Anònim</p></li>
+    {% endblock %}
+
+    

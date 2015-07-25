@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Instal·lar el controlador ATI
+    {% endblock %}
+
+    {% block author %}
+        Mecatxis
+    {% endblock %}
+
+    {% block post_date %}
+        2006-11-09 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Iniciació
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Un nou article fruit de les trifulgues dels usuari d&#39;ATI.<br /> <br /> Aqu&iacute; teniu un truc imprescindible per instal&middot;lar la darrera versi&oacute; del controlador</span> <br />    Despr&eacute;s de descarregar el darrer controlador propietari d&#39;Ati <a href="https://a248.e.akamai.net/f/674/9206/0/www2.ati.com/drivers/linux/ati-driver-installer-8.30.3.run">aqu&iacute;</a> amb data 31 d&#39;octubre i d&#39;intentar instal&middot;lar-los seguint les instruccions, he detectat que falla estrepitosament.<br /> <br /> Miro el fitxer /usr/share/ati/fglrx-install.log i trobo:<br /> <br /> [Message] Kernel Module : Trying to install a precompiled kernel module.<br /> [Message] Kernel Module : Precompiled kernel module version mismatched.<br /> [Message] Kernel Module : Found kernel module build environment, generating kernel module now.<br /> ATI module generator V 2.0<br /> ==========================<br /> initializing...<br /> cleaning...<br /> patching &#39;highmem.h&#39;...<br /> assuming new VMA API since we do have kernel 2.6.x...<br />  Assuming default VMAP API<br /> doing Makefile based build for kernel 2.6.x and higher<br /> make -C /lib/modules/2.6.16-2-686/build SUBDIRS=/lib/modules/fglrx/build_mod/2.6.x modules<br /> make[1]: Entering directory `/usr/src/linux-headers-2.6.16-2-686&#39;<br />   CC [M]  /lib/modules/fglrx/build_mod/2.6.x/firegl_public.o<br /> /lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:456: warning: initialization from incompatible pointer type<br /> /lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:2264: warning: &#39;deferred_flush&#39; defined but not used<br />   LD [M]  /lib/modules/fglrx/build_mod/2.6.x/fglrx.o<br />   Building modules, stage 2.<br />   MODPOST<br />   CC      /lib/modules/fglrx/build_mod/2.6.x/fglrx.mod.o<br />   LD [M]  /lib/modules/fglrx/build_mod/2.6.x/fglrx.ko<br /> make[1]: Leaving directory `/usr/src/linux-headers-2.6.16-2-686&#39;<br /> build succeeded with return value 0<br /> duplicating results into driver repository...<br /> done.<br /> ==============================<br /> - recreating module dependency list<br /> - trying a sample load of the kernel modules<br /> failed.<br /> [Error] Kernel Module : Failed to install compiled kernel module - please consult readme.<br /> <br /> <br /> Consulto el readme i no trobo cap m&eacute;s pista del possible problema. He investigat una mica.<br /> <br /> <br /> Doncs be. Finalment he trobat la soluci&oacute;. El problema radica en que el controlador est&agrave; preparat per ser compilat amb la versi&oacute; 4.0 de gcc, mentre que la versi&oacute; que jo tenia instal&middot;lada era la 4.1. Ves per on.<br /> <br /> La soluci&oacute; passa per fer com a superusuari:<br /> <br /> updatedb <br /> <br /> Aix&oacute; pot trigar uns minutets, tinguem paci&egrave;ncia. Quan acabi, fem:<br /> <br /> locate fglrx-uninstall <br /> <br /> Amb aix&ograve; localitzem el fitxer de desinstal&middot;laci&oacute; del controlador fglrx antic, si el tenim.<br /> <br /> Anem al directori que contingui el controlador. En el meu cas:<br /> <br /> cd /usr/share/fglrx<br /> sh ./fglrx-uninstall.sh <br /> <br /> A continuaci&oacute; instal&middot;lem la versi&oacute; del compilador, si no la tenim instal&middot;lada.<br /> <br /> apt-get install gcc-4.0<br /> <br /> I substitu&iuml;m la versi&oacute; del gcc.<br /> <br /> rm /usr/bin/gcc<br /> ln -s /usr/bin/gcc-4.0 /usr/bin/gcc<br /> <br /> Ja ho tenim. Ara caldr&agrave; anar al directori on hagem descarregat l&#39;instal&middot;lador del nou controlador. En el meu cas:<br /> <br /> cd /home/angel/ <br /> <br /> I instal&middot;lar<br /> <br /> sh ./ati-driver-installer-8.30.3.run<br /> <br /> Un com completada la instal&middot;laci&oacute;, seguim el manual d&#39;instal&middot;laci&oacute; de Ati i executem<br /> <br /> aticonfig --initial<br /> <br /> A mi m&#39;ha anat be i m&#39;ha instal&middot;lat el controlador configurat amb acceleraci&oacute; gr&agrave;fica. Ara faltar&agrave; configurar-la per treure&#39;n el m&agrave;xim rendiment, per&ograve; aix&ograve; ho deixo per gent m&eacute;s experta que jo. :-)
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

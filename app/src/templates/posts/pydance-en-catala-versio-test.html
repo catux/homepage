@@ -1,0 +1,36 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        pydance en català versió test
+    {% endblock %}
+
+    {% block author %}
+        Mecatxis
+    {% endblock %}
+
+    {% block post_date %}
+        2008-04-13 10:35:24
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <p>Ja tenim disponible la versió del pydance <img src="images/stories/icon.png" border="0" title="icona pydance" /> traduïda al català. Ens agradaria molt que la provéssiu i ens diguéssiu què hi falta i que milloraríeu. </p><p>Seguiu els següents passos:</p><p>&nbsp;</p><ol><li>Descarregueu-la <a href="arxius/pydance.tar.gz">aquí.</a></li><li>Descomprimiu l'arxiu.</li><li>Obriu una consola i entreu al directori descomprimit.</li><li>Escriviu   <em>./setup.py install.</em></li><li>Pels usuaris d'Ubuntu, escriviu <em>sudo make install. </em>Pels usuaris d'altres sistemes, consulteu aquí si no sabeu com instal·lar-lo.</li><li>Escriviu <em>./pydance.py </em>per engegar el programa</li></ol><br /><p> Esperem les vostres propostes!</p><p>      Actualització!!!</p><p>    Avui amb el Fran  hem actualitzat el <a href="arxius/traduccions/pydance/ca.po">ca.po</a></p>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Al cos de la notícia teniu el po modificat.
+
+Atenció! La traducció dels colors de les lletres dona un error. :cry
+
+  File "/home/mecatxis/jocs/pydance/steps.py", line 293, in __init__
+    clrs = [colors.color[c] for c in mainconfig["lyriccolor"].split("/")]
+KeyError: 'cian'
+
+Pinux, t'ho pots mirar?<p class="comment-author">Escrit al 2008-04-14 22:01:45 per Mecatxis</p></li>
+    {% endblock %}
+
+    

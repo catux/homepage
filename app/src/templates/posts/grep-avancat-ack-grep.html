@@ -1,0 +1,37 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        grep avançat: ack-grep
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2009-08-14 20:29:56
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <p>Paquet Debian: ack-grep</p>
+<p>Trobo convenient un alias al ~/.bashrc tipus alias ack="ack-grep"</p>
+<p>I posar a la configuració del ack: ~/.ackrc (directament a dins): --pager=less -r</p>
+<p>Bàsicament és un grep però amb unes aventatges immediantes:</p>
+<ul>
+<li>Una sortida molt més maca (colorejada per defecte, amb el nom del fitxer al començament de totes les coincidències del fitxer</li>
+<li>Només busca dins de fitxers que ell pensa que poden ser interessants: se salta els core, .svn, binaris, etc. : va molt més ràpid</li>
+<li>Amb el què he dit més amunt del .ackrc ho passa al less i less manté els colors</li>
+</ul>
+<p>Ja fa setmanes que treballant amb codi ho faig servir i va perfecte! Molt més ràpid i còmode.</p>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

@@ -1,0 +1,31 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Breu: Còpies de seguretat
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2006-11-01 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Voleu una manera r&agrave;pida de fer c&ograve;pies de seguretat entre dos ordinadors?<br /> <br /> Nom&eacute;s cal tenir un ordinador on hi tinguem acc&eacute;s ssh i el paquet rsync instal&middot;lat. Des d&#39;un altre fer:<br /> <br /> rsync -az --delete /home/usuari usuari_remot@IP:/home/usuari/backup<br /> <br /> I ja ens far&agrave; la c&ograve;pia remota de /home/usuari a l&#39;altre ordinador. Fer-ho m&eacute;s f&agrave;cil &eacute;s dif&iacute;cil! Amb els discs d&#39;ara, un GB t&eacute; un preu d&#39;uns 0.5 Euros aprox, aix&iacute; que no hi ha excusa per no fer c&ograve;pies. <br /> <br /> L&#39;rsync nom&eacute;s enviar&agrave; els canvis fets des de l&#39;&uacute;ltima c&ograve;pia (per tant &eacute;s molt r&agrave;pid), a m&eacute;s a m&eacute;s de forma comprimida i xifrada.<br /> <br /> Aqu&iacute; es pot afegir contrasenyes ssh p&uacute;bliques/privades per fer-hosense login, etc.<br /> <br /> Si ho volem a un altre directori (nom&eacute;s copiar el qu&egrave; s&#39;ha modificat, eliminar el qu&egrave; s&#39;ha eliminat):<br /> rsync -a --delete /home/usuari /mnt/disc_usb/backup</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Re: Breu: Còpies de seguretat No bastaria fer rsync -av ...?
+Em sembla que les opcions -rt ja estan incloses dins la -a
+És així?
+Saludos,<p class="comment-author">Escrit al 2006-12-29 16:56:29 per Anònim</p></li><li class="list-group-item comment">Re: Breu: Còpies de seguretat Tens tota la raó. Ara ho canvio. Llavors encara és més fàcil :-)<p class="comment-author">Escrit al 2006-12-29 16:57:10 per cpina</p></li>
+    {% endblock %}
+
+    

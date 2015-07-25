@@ -1,0 +1,30 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        1.111.111.111 segons des del 1970
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2005-03-18 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Des del 1970 hauran passat 1.111.111.111 el dia 18 de Mar&ccedil; a les 02:58:31 CET.<br /> <br /> Els segons des del 1970 &eacute;s la manera &quot;tradicional&quot; de comptar la data amb Linux (suposo que amb Unix en general, si m&eacute;s no des de fa ja anys). <br /> <br /> Podem veure-ho a la l&iacute;nia de comandes amb date +%s.<br /> <br /> M&eacute;s informaci&oacute;, per exemple a <a href="http://slashdot.org/articles/05/03/17/169200.shtml?tid=130">Slashdot</a>.</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Re: 1.111.111.111 segons des d Jo personalment recordo quan es van fer 1.000.000.000 segons. També va ser un dia tard a la nit; recordo haver-ho vist en directe amb un script que ho anava ensenyant :-)
+
+En aquest cas és menys important però també és prou màgic el número...<p class="comment-author">Escrit al 2006-12-29 00:29:34 per cpina</p></li>
+    {% endblock %}
+
+    

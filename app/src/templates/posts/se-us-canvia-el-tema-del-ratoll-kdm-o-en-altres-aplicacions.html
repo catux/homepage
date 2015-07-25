@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Se us canvia el tema del ratolí al KDM o en altres aplicacions?
+    {% endblock %}
+
+    {% block author %}
+        Pinucset
+    {% endblock %}
+
+    {% block post_date %}
+        2006-06-22 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Us heu fixat que al KDM i altres aplicacions (Firefox i altres) no respecten el vostre tema de ratol&iacute; del KDE?, aix&ograve; &eacute;s perqu&egrave; aquestes agafen el tema per defecte (negre amb vora blanca) i no el que nosaltres li hem assignat.<br /> <br /> Se soluciona molt f&agrave;cilment fent un enlla&ccedil; simb&ograve;lic:<br /> <br /> ln -s /usr/share/icons/elmeutema/cursors/ /usr/share/icons/default<br /> <br /> &quot;Cursors&quot; no sempre est&agrave; present, si no existeix es pot ometre.<br /> <br /> Espero que us sigui d&#39;utilitat ja que es un problema for&ccedil;a general.</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

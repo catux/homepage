@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Kernel 2.6.8.1
+    {% endblock %}
+
+    {% block author %}
+        whats_up
+    {% endblock %}
+
+    {% block post_date %}
+        2004-08-15 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">El primer cop que veig un canvi de versi&oacute; tan r&agrave;pid. Amb menys de 24 hores han canviat la versi&oacute; del kernel. El motiu el podeu trobar al <a href="http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.8.1">changelog</a> m&eacute;s curt que he vist mai. ;)<br /> <br /> <br /> Summary of changes from v2.6.8 to v2.6.8.1<br /> ============================================<br /> <br /> jgarzik@pobox.com<br /> 	[PATCH] Fix NFS client screw-up in fcntl f_op removal<br /> 	<br /> 	Fix stupid thinkos in the fcntl f_op removal code.<br /> <br /> torvalds@ppc970.osdl.org<br /> 	Linux 2.6.8.1</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Doncs jo és la primera vegada que veig una quarta xifra en el nombre de versió. Fins fa poc, quan sortia algun bug important saltaven directament a la següent tercera xifra. Potser té a veure amb l'anunci de que de moment no hi haurà branca 2.7, i volen aprofitar millor la numeració ;)<p class="comment-author">Escrit al 2006-12-28 14:29:43 per jvprat</p></li><li class="list-group-item comment">Jo més aviat diria q deu ser pq ha estat un descuit molt gros, i s'han adonat al cap de molt poc, seria basastant graciós que hagués sortit la 2.6.9 per arreglar una coseta del 2.6.8<p class="comment-author">Escrit al 2006-12-28 14:30:44 per whats_up</p></li>
+    {% endblock %}
+
+    

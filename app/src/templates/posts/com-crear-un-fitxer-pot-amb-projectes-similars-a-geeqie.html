@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Com crear un fitxer pot amb projectes similars a geeqie?
+    {% endblock %}
+
+    {% block author %}
+        Mecatxis
+    {% endblock %}
+
+    {% block post_date %}
+        2009-03-22 18:31:23
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Trucs
+    {% endblock %}
+
+    {% block post %}
+        <p>Preparant la traducció del <em><a href="http://sourceforge.net/projects/geeqie/">geeqie</a></em> m'he trobat que la versió del <em>subversion</em> no incorporava el fitxer pot i no sabia com crear-lo. Parlant-ne amb el jvprat ens n'hem sortit :D</p><p>&nbsp;</p><p>Primer cal tenir instal·lats els fitxers <em>autoconf</em> i <em>automake</em>:</p><p>&nbsp;</p> <pre><p>$sudo apt-get install autoconf automake</p><p>&nbsp;</p></pre>  <p>Ens posem a l'arrel dels fitxers descarregats amb el subversion, on trobem el fitxer autogen.sh i l'executem</p><p>&nbsp;</p> <pre><p>$./autogen.sh</p><p>&nbsp;</p></pre> <p>Ja s'hauran creant els fitxers «makefile» i «configure», que són els fitxers que ens faltaven. En cas que encara ens faltin els fitxers «makefile» fem un configure:</p><p>&nbsp;</p> <pre><p> $./configure</p><p>&nbsp;</p></pre> <p>Un cop tinguem els fitxers «makefile» Anem a la carpeta po</p><p>&nbsp;</p> <pre><p>$ cd po </p><p>&nbsp;</p></pre> <p>I creem el fitxer pot</p><p>&nbsp;</p> <pre><p>$ make update-po</p></pre> <p>&nbsp;</p><p>I ja ens haurà creat el fitxer geeqie.pot!</p>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

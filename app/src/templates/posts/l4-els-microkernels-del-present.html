@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        L4: Els microkernels del present
+    {% endblock %}
+
+    {% block author %}
+        jvprat
+    {% endblock %}
+
+    {% block post_date %}
+        2004-10-11 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Avui estava tafanejant sobre <a href="http://www.gnu.org/software/hurd/">GNU Hurd</a>, un nucli (basat en el microkernel <a href="http://www.gnu.org/software/hurd/gnumach.html">GNU Mach</a>) desenvolupat per GNU per suplir Linux i aconseguir un sistema operatiu totalment GNU, i he anat a parar de rebot a la p&agrave;gina de <a href="http://os.inf.tu-dresden.de/L4/">L4</a>.<br /> <br /> L4 &eacute;s una fam&iacute;lia de microkernels (<a href="http://os.inf.tu-dresden.de/fiasco/">Fiasco</a>, <a href="http://l4ka.org/projects/pistachio/">L4Ka::Pistachio</a>, etc...) desenvolupats en paral&middot;lel per diverses universitats, que comparteixen la mateixa API.<br /> <br /> El principal avantatge sobre GNU Mach &eacute;s que aquests mantenen un desenvolupament for&ccedil;a actiu, i per tant aconsegueixen uns resultats molt m&eacute;s visibles (a curt termini). L&#39;exemple per excel&middot;l&egrave;ncia &eacute;s <a href="http://os.inf.tu-dresden.de/L4/LinuxOnL4/">L4Linux</a>, una adaptaci&oacute; de Linux que utilitza els microkernels L4, de la que fa poc han tret la versi&oacute; 2.6, basada en Linux 2.6.8.1. Per als m&eacute;s agosarats, hi ha fins i tot un <a href="http://os.inf.tu-dresden.de/L4/LinuxOnL4/demo.shtml">CD de demostraci&oacute;</a>. Si alg&uacute; el prova ja comentar&agrave; com ha anat l&#39;experi&egrave;ncia ;)<br /> <br /> Cal comentar tamb&eacute; que hi ha un projecte per implementar <a href="http://savannah.nongnu.org/projects/l4hurd/">GNU Hurd sobre L4</a>.</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

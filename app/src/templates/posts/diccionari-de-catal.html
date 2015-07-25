@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Diccionari de català
+    {% endblock %}
+
+    {% block author %}
+        xavierfim
+    {% endblock %}
+
+    {% block post_date %}
+        2005-04-18 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Varis
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Presentaci&oacute; d&#39;un script en bash que permet accedir al diccionari de l&#39;Institut d&#39;Estudis Catalans. </span><div id="article" class="article_normal"><br /> Arran de la not&iacute;cia apareguda a CATUX sobre una <a href="http://www.catux.org/index.php?num=291">seq&uuml;&egrave;ncia que permetia comptar lletres</a> vaig decidir-me finalment a fer una humil contribuci&oacute; a la comunitat del programari que tant m&#39;ha donat, a partir d&#39;una necessitat personal.<br /> <br /> <br /> <br /> Acostumo a visitar el <a href="http://pdl.iec.es/entrada/diec.asp">diccionari del Institut d&#39;Estudis Catalans</a> (IEC) i necessitava una manera m&eacute;s pr&agrave;ctica que no pas obrint un navegador cada vegada i buscant la p&agrave;gina als punts preferits. Donava la casualitat que Javier Fern&aacute;ndez-Sanguino Pe&ntilde;a (que malgrat la coincid&egrave;ncia de nom i cognom, no som el mateix ;-) ) havia fet una petita utilitat en l&iacute;nia de comandes per a accedir al diccionari de la &quot;Real Academia de la Lengua&quot; (<a href="http://www.iespana.es/pacodebian/drae.html">aqu&iacute;</a> i <a href="http://www.badopi.org/node/147">aqu&iacute;</a>).<br /> <br /> <br /> <br /> Agafant-ne la idea he mirat d&#39;adaptar-ho al servei que ofereix l&#39;IEC i d&#39;aqu&iacute; n&#39;ha sortit aquesta petita utilitat: <a href="http://catux.org/arxius/iec.sh%3Cbr%20/%3E">iec.sh</a>. La podeu descarregar de <a href="http://catux.org/arxius/iec.sh">http://catux.org/arxius/iec.sh</a>.<br /> <br /> <br /> <br /> El que fa aquest programa &eacute;s connectar-se al web de l&#39;IEC, esbrinar quin &eacute;s el n&uacute;mero de la paraula que estem buscant i, despr&eacute;s, tornar-se a connectar a la p&agrave;gina que cont&eacute; la definici&oacute; i que es pot trobar sabent el n&uacute;mero de la paraula. Tot plegat, doncs, ha de fer dues crides al servidor de l&#39;IEC.<br /> <br /> <br /> <br /> Problemes, dubtes i coses a fer? Oi tant, a cabassos. Us en faig cinc c&egrave;ntims per si alg&uacute; m&eacute;s t&eacute; la intenci&oacute; de posar-s&#39;hi:<br /> <br /> <br /> <br /> <li>No estic segur que si el programa no troba la paraula mostri adequadament un missatge d&#39;error.</li><br /> <br /> <li>Seria interessant que si es cerqu&eacute;s m&eacute;s d&#39;un terme el programa iter&eacute;s i es repet&iacute;s per a cadascun dels termes cercats.</li><br /> <br /> <li>Hi ha paraules que tenen m&eacute;s d&#39;una entrada (un n&uacute;mero al diccionari). De moment, el programa nom&eacute;s accedeix a la primera entrada.</li><br /> <br /> <li>Estaria b&eacute; que el programa tamb&eacute; cerqu&eacute;s al web del <a href="http://dcvb.iecat.net/">Diccionari catal&agrave;-valenci&agrave;-balear</a>, l&#39;&quot;Alcover-Moll&quot; [6] i present&eacute;s ambd&oacute;s resultats.</li><br /> <br /> <br /> <br /> <br /> <br /> <br /> Vull donar les gr&agrave;cies especialment a en Carles Pina i Estany, qui em va desencallar en un parell de punts i qui s&#39;ha ofert per penjar el programa al web de Catux. Gr&agrave;cies.<br /> <br /> <br /> <br /> <br /> Espero que sigui &uacute;til.<br /> </div>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

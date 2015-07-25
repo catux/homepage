@@ -1,0 +1,88 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Com destroçar un linux amb una comanda
+    {% endblock %}
+
+    {% block author %}
+        whats_up
+    {% endblock %}
+
+    {% block post_date %}
+        2004-12-21 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Ja que estem en &egrave;poques nadalenques on &quot;tot &eacute;s felicitat&quot; ;), us convido a dir la vostra forma predilecta de destrossar un linux executant una sola comanda.<br /> <br /> No es val el &quot;<strong>rm -rf /</strong>&quot; perqu&egrave; la &uacute;nica persona que pot usar-la &eacute;s el nostre president (o sin&oacute; demaneu-li a en chernu ;p)<br /> <br /> La meva proposta &eacute;s la seg&uuml;ent (us demano originalitat!):<br /> <br /> <strong>dd if=/dev/zero of=/dev/hda count=512 bs=1</strong></span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Re: Com destroçar un linux amb Una forma bonica de carregar-se l'accès a linux es fer fdisk /MBR ... o el que es casi el mateix, haver d'instal.lar hasefroch.
+
+
+Bon nadal a tots!!<p class="comment-author">Escrit al 2006-12-28 16:53:22 per laura</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb Jo acabo de pensar una altra manera:
+
+yes > /dev/sda
+
+(canviant sda per el vostre disc dur o partició)
+
+bon nadal !!!<p class="comment-author">Escrit al 2006-12-28 16:56:16 per mark</p></li><li class="list-group-item comment">Molt útil Re: Com destroçar un linux amb<p class="comment-author">Escrit al 2006-12-28 16:57:46 per Anònim</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb mark: quina rabia, anava a pensar la forma més curta de fer-ho i no m'en ve cap de més curta que yes :-)
+
+Posats a dir, si cas:
+dd if=/dev/urandom of=/dev/hda bs=512
+
+Per cert, whats_up, que lo teu "només" destrossa el MBR i no tot Linux...<p class="comment-author">Escrit al 2006-12-28 16:58:58 per cpina</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb badblocks -svw /dev/hda<p class="comment-author">Escrit al 2006-12-28 17:00:22 per Anònim</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb Pinux: si ho fas, ja no tornes a iniciar el sistema... ;)
+
+(No volia posar algo molt destructiu en portada...)<p class="comment-author">Escrit al 2006-12-28 17:01:57 per whats_up</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb whats_up: en tot cas _no_ és destroçar un linux.
+És com dir: vaig a destrossar un edifici, i trabar la porta. No?<p class="comment-author">Escrit al 2006-12-28 17:02:33 per cpina</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb jejejeje
+
+però ja fas bé whats, que si poses alguna cosa molt destructiva en portada, segur que hi ha algú que es dedica a fer-ho indiscriminadament ;-D<p class="comment-author">Escrit al 2006-12-28 17:05:12 per mark</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb 
+mkswap /dev/hda1, la gràcia està en que hda1 no sigui la partició de swap. xD<p class="comment-author">Escrit al 2006-12-28 17:06:18 per Liwy</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb En proposo una altre, amb aquesta podeu obtenir més espai als vostres directoris :)
+
+find / -type f -exec rm {} \;<p class="comment-author">Escrit al 2006-12-28 17:06:53 per whats_up</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb 
+find / -fstype vfat -or -fstype ntfs -exec rm {} \;
+Recupera espai també, selectivament.<p class="comment-author">Escrit al 2006-12-28 17:07:29 per cpina</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb 
+jejejejj, jejjej
+
+M'agrada molt més aquest! :P<p class="comment-author">Escrit al 2006-12-28 17:08:02 per whats_up</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb Us heu oblidad la pitjor de les guarrades:
+
+mkfs.msdos /dev/hdxy
+
+donat que hdxy es on esta la particio del sistema<p class="comment-author">Escrit al 2006-12-28 17:08:45 per miquel</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb El millor és el badblocks, et deixa el disc dur nou del tot (ni particions).<p class="comment-author">Escrit al 2006-12-28 17:10:45 per Anònim</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb Res de res. Això és fa entrant a la BIOS i formatant del disc dur a baix nivell.
+
+Segurísim que no podeu recuperar la informació.
+
+Bon Nadal. :D<p class="comment-author">Escrit al 2006-12-28 17:13:00 per Kenoby</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb Hola,
+
+Ja que ho dius, eduKenoby, pots dir-me quina és l'opció que formateja a baix nivell d'entre les opcions de la BIOS?<p class="comment-author">Escrit al 2006-12-28 17:15:51 per Anònim</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb No totes les bios porten l'opció.....
+
+Per cert Pinux, he trobat una comanda encara més curta q fa q no arrenqui el linux, q diguesim... li para el cor :P
+
+> /sbin/init
+
+Sort!<p class="comment-author">Escrit al 2006-12-28 17:16:34 per whats_up</p></li><li class="list-group-item comment">Re: Com destroçar un linux amb 
+Jejejejeje molt bones totes, pero jo en conec una de pitjor.....Es podria anomenar la comanda "terminator" i es mooolt facil.
+Bueno mes que comanda seria "comando", per que es tracta de un tio que conec que si li deixas 5 minuts devant del ordinador segur que no torna mai mes a arrencar. "He sido yo....????".....
+A mes es una "comanda" multiplataforma serveix per tots el sistemas operatius.<p class="comment-author">Escrit al 2006-12-28 17:17:31 per camelout</p></li><li class="list-group-item comment">Quines coses L'article que més comentaris ha tingut en aquesta web és precisament un article que parla de com destrossar el linux !!!
+
+Suposo que totes aquestes comandes si les executa un usuari normal no deu passar res, oi ?
+
+El proper article sobre com destrossar el Win XP !!! (si els virus no arriben abans clar).<p class="comment-author">Escrit al 2006-12-28 17:18:03 per Anònim</p></li><li class="list-group-item comment">Destrossar rapidament vaja vaja xD aixo pinta molt be ^_^
+jo mel vai carregar un al seu dia xD
+
+amb esta comanda:
+
+fsck /dev/hda1
+i quan me va dir que \"era perillos\" li vaig donar al \"yes\" i llavorens... adios muy bunenas ó_ò
+
+neh dona igual n_n
+
+igualment, bon nadal (tot i no se la epoca xD)<p class="comment-author">Escrit al 2007-10-07 22:40:50 per Katsuro</p></li>
+    {% endblock %}
+
+    

@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Synergy
+    {% endblock %}
+
+    {% block author %}
+        Mecatxis
+    {% endblock %}
+
+    {% block post_date %}
+        2008-01-23 21:15:55
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        Un nou article de <a href="http://debaday.debian.net/">Deb a Day</a> tradu&iuml;t a la web de Catux: Synergy: compartint el teclat i el ratol&iacute;.<p>Synergy: compartint el teclat i el ratol&iacute;.</p><p><br />Publicat per Carles Pina el 16 de&nbsp; del 2007 a <a href="http://debaday.debian.net/">http://debaday.debian.net</a>  sota llic&egrave;ncia <a href="http://www.opencontent.org/openpub/">Open Publication License</a> </p><p><br />L&#39;usuari necessita moltes&nbsp; vegades fer servir dos ordinadors a l&#39;hora, fins i tot amb sistemes operatius diferents, i els dos a la mateixa taula. Una de les coses m&eacute;s molestes &eacute;s haver de disposar d&#39;un teclat i un ratol&iacute; per cadascun d&#39;ells, sobretot per l&#39;espai que ocupen.</p><p><br />Una de les primeres coses que se&#39;t poden acudir &eacute;s fer servir un teclat i un ratol&iacute; per accedir als altres ordinadors amb algun programa tipus VNC, ssh, FreeNX,... per&ograve; hi ha vegades que t&#39;estimes m&eacute;s fer servir l&#39;altre ordinador directament, perqu&egrave; podem disposar de dos monitors (molt c&ograve;mode), ja sigui per feines de disseny gr&agrave;fic, jocs, una sensaci&oacute; m&eacute;s propera de l&#39;interf&iacute;cie d&#39;usuari, etc. &Eacute;s d&#39;aix&ograve; que parlarem aqu&iacute;.</p><p>&nbsp;</p><h2>What is synergy?</h2><p>Sinergy &eacute;s un programa client-servidor multi-plataforma disenyat per fer servir el mateix teclat i ratol&iacute; en diferents ordinadors d&#39;una mateixa xarxa.</p><p><br />Com es fa servir? (&eacute;s a dir, com fem el canvi d&#39;un ordinador a un altre): L&#39;&uacute;s b&agrave;sic consisteix simplement a moure el punter del ratol&iacute; des d&#39;una pantalla a una altra, tenint en compte que a vegades cal arribar a les cantonades de la pantalla per coses com ara tancar una finestra fent servir la x que hi ha a la part superior dreta. De tota manera, sempre tenim l&#39;opci&oacute; de configurar una drecera de teclat per canviar d&#39;una pantalla a una altra.</p><p>&nbsp;</p><h2>Configuraci&oacute;</h2><p>La configuraci&oacute; &eacute;s for&ccedil;a senzilla: has de definir la disposici&oacute; de les pantalles (quina pantalla hi ha a la dreta, quina a l&#39;esquerra, a dalt o a baix)</p><p>&nbsp;</p><p>Per exemple, si tenim dos ordinadors, un que es diu &ldquo;sobretaula&rdquo; i un altre que es diu &ldquo;portatil&rdquo; i volem fer servir el ratol&iacute; de &ldquo;sobretaula&rdquo; (el qual per tant actuar&agrave; com a server), escriurem la seg&uuml;ent configuraci&oacute; al fitxer <span class="code">/etc/synergy.conf</span>,&nbsp; o el que hagem indicat si hem emprat l&#39;opci&oacute; <span class="moscode">&ndash;config PATH_TO_CONFIG</span>.</p><p><br /><span class="code">section: screens<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sobretaula:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; portatil:<br />end<br /><br />section: links<br />sobretaula:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right = portatil<br />portatil:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left = sobretaula<br />end</span></p><p>&nbsp;</p><p>Els noms dels ordinadors han de ser els mateixos que la comanda <span class="code">hostname</span> ens dona.<br />Llavors, a l&#39;ordinador que actua com a servidor executarem per llegir la configuraci&oacute; de <span class="code">/etc/</span>:<br /><span class="code">$ synergys</span></p><p>O per llegir la configuraci&oacute; desada al nostre directori d&#39;usuari<br /><span class="code">$ synergys --config ~/.synergy.conf</span></p><p>Llavors a cada ordinador client:<br /><span class="code">$ synergyc SERVER_IP</span></p><p>Si tenim algun problema, en podem fer un seguiment amb:<br /><span class="code">$ synergyc -f SERVER_IP</span></p><p>&nbsp;</p><h2>Information</h2> <p>Al lloc del <a href="http://synergy2.sourceforge.net/">projecte</a>  podeu trobar una molt bona documentaci&oacute;.</p><p><br />Synergy no ofereix una connexi&oacute; segura, per&ograve; podem fer servin un tunel VPN oSSH per evitar que algun altre de la xarxa capturi les nostres sessions. Vegeu la p&agrave;gina de <a href="http://synergy2.sourceforge.net/security.html">securetat</a>  al web del projecte.</p><p><br />Podeu tamb&eacute; provar el paquet <a href="http://packages.debian.org/quicksynergy">quicksynergy</a> , que &eacute;s una interf&iacute;cie gr&agrave;fica per synergy.</p><p><br />Synergy &eacute;st&agrave; disponible per Debian i Ubuntu des de fa temps.</p><p><br />Moltes gr&agrave;cies a en <a href="http://franhp.wordpress.com/">Fran Hermoso</a>  per la seva correcci&oacute; i millora del text en angl&egrave;s i a en Peral per fer-me descobrir synergy.</p>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

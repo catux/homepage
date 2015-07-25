@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Sistemes de fitxers per xarxa i encriptats!
+    {% endblock %}
+
+    {% block author %}
+        whats_up
+    {% endblock %}
+
+    {% block post_date %}
+        2004-06-20 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Despr&eacute;s de molt de temps buscant un sistema de fitxers que es pogu&egrave;s utilitzar per xarxa i fos encriptat, he trobat la sol&middot;luci&oacute; a tots els meus problemes! El projecte es diu <a href="http://shfs.sourceforge.net/">shfs</a> i el que et permet &eacute;s a nivell d&#39;usuari muntar qualsevol directori d&#39;un ordinador via ssh. Total, que amb aquesta magn&iacute;fica eina, podem montar qualsevol directori d&#39;una m&agrave;quina remota que tingui l&#39;ssh!, i aix&ograve; &eacute;s tant f&agrave;cil de fer com executant: &quot;shfsmount -p -o cachesize=2048 host:directori/ /punt-de-muntatge/&quot;. <br /> Molta sort i a disfrutar-la!</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

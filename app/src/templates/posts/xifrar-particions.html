@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Xifrar particions
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2008-11-02 13:43:34
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Trucs
+    {% endblock %}
+
+    {% block post %}
+        <p>En aquesta entrada s'explicarà com xifrar els sistemes de fitxers. Un cop fet cal introduir una contrasenya quan es munta el sistema de fitxers. Quan ja està muntat el sistema de fitxers es fan les operacions de xifrar i de-xifrar al vol i queda totalment transparent a l'usuari (no notem que està xifrat). A les proves que vaig fer, el rendiment de lectura/escriptura és molt semblant.</p><p>El motiu de xifrar alguns sistemes de fitxers és evitar que, si perdem o ens roben el portàtil, no es pugui accedir tant fàcilment als nostres fitxers. Una bona manera de fer proves és xifrant algun disc USB.</p><p>No he fet proves xifrant la partició / (sí, la HOME). Xifrar la partició / és més problemàtic, no ho he provat i no és tant necessari: podem evitar que hi hagi dades personals i que només hi hagi fitxers del sistema.  </p><p>Hi ha altres maneres de xifrar les particions, aquí mostraré els passos utilitzant crypsetup i <a href="http://luks.endorphin.org/">luks</a> (Linux Unified Key Setup). </p><p>Les proves són amb les comandes més bàsiques.  Fa mesos que faig servir aquest sistema, i és molt fàcil d'accedir a les dades des de diferents ordinadors Linux, diferents distribucions, etc.  </p><h1>Instruccions</h1><p> Primer preparem la partició pel format luks. Aquí s'ens demanarà la contrasenya:</p><pre>cryptsetup --verbose --verify-passphrase luksFormat /dev/sdX1</pre><p>(fent això és perderà tot el què hi hagi a sdX1!)  Obrim la partició i la deixem desencriptada com si fos un "Device Mapper":</p><pre>cryptsetup luksOpen /dev/sdX1 xifrat</pre><p>A partir d'ara, tenim a /dev/mapper/xifrat un dispositiu que hem d'accedir per fer servir la partició ja desencriptada.</p><p>Per tant, la podem formatejar:</p><pre>mkfs -t xfs /dev/mapper/xifrat</pre><p>I muntar de forma normal:</p><pre>mkdir /mnt/xifrat mount /dev/mapper/xifrat /mnt/xifrat/</pre><p>A partir d'aquí tenim el sistema de fitxers a /mnt/xifrat  Si volem desmontar, hem de desmontar el sistema de fitxers: </p><pre>umount /mnt/xifrat  </pre><p>I després tancar el luks: </p><pre>cryptsetup luksClose /dev/sdX1 </pre><p>Podem demanar informació: </p><pre>cryptsetup status xifrat  </pre><h1>A l'arranc</h1><p> Si volem que una partició xifrada es monti a l'arranc (demanant la contrasenya, clar) hem d'escriure a /etc/crypttab:</p><pre>home    /dev/sda6               none            luks</pre><p>Això ens demanarà la contrasenya per /dev/sda6 i ho deixarà a /dev/mapper/home. Al /etc/fstab cal tenir-hi:  </p><pre>/dev/mapper/home        /home   xfs     defaults        0       2  </pre><h1>Script per montar un disc extraible</h1><p>Aquest apartat és totalment opcional. A més, no és exclusiu per particions xifrades. </p><p>No volia haver de remanar  crypttab o fstab per alguns discs USB, així que vaig fer algun script com ara:  </p><pre>#!/bin/bash</pre><pre>cryptsetup luksOpen /dev/disk/by-uuid/ef5eeaaf-39df-45bf-9492-XXXXXXX disc_gros</pre><pre>mount /dev/mapper/disc_gros</pre><p>Per saber el uuid (identificador "únic") podem endollar el disc USB i llavors fer:</p><pre>ls -la /dev/disk/by-uuid/</pre><p>I ens fixem quin fitxer UUID enllaça cap a la partició que volem. Així no hem d'estar pendents de si ara el disc és sdb1 o sdc1 (en funció de què l'ordre que es connecta).  </p><p>L'script per desmontar:</p><pre>#!/bin/bash</pre><pre>umount /mnt/disc_gros</pre><pre>cryptsetup luksClose /dev/mapper/disc_gros </pre>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

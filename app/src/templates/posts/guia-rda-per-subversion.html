@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Guia ràpida per Subversion
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2004-04-17 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Trucs
+    {% endblock %}
+
+    {% block post %}
+        <br />    <div id="article" class="article_normal">Aqu&iacute; faig una petita guia r&agrave;pida per treballar amb el Subversion.<br /> <br /> Com a exemple aprofito per fer-ho amb el codi del web de Catux.<br /> <br /><a href="http://pinux.info/"></a></div><br /> Primer de tot agafarem el codi font:<br /> <br /> svn checkout svn://catux.org/php<br /> <br /> I ja el tindrem a un directori del nostre disc.<br /> <br /> A partir d&#39;aqu&iacute; podem treballar de forma normal amb els fitxers. De totes maneres, si volem copiar, moure o eliminar fitxers haurem de fer:<br /> <br /> <br /> svn copy origen desti<br /> svn move origen desti<br /> svn delete pp.c<br /> <br /> <br /> Aix&iacute; informarem a Subversion del que estem fent (que dest&iacute; &eacute;s una c&ograve;pia d&#39;origen, etc.)<br /> <br /> A vegades, potser volem &quot;desfer&quot; els canvis que hem fet a un fitxer, ho podr&iacute;em fer aix&iacute;:<br /> <br /> <br /> svn revert hola.php<br /> <br /> <br /> Quan haguem acabat, farem:<br /> <br /> <br /> svn commit<br /> <br /> <br /> Ens demanar&agrave; una descripci&oacute; del que haguem fet. &Eacute;s important posar descripcions concises, i a m&eacute;s enviar les modificacions freq&uuml;entment (&eacute;s a dir, no treballar una setmana sencera i enviar les actualitzacions sin&oacute; fer-ho de tant en tant).<br /> <br /> Si volem actualitzar la nostra c&ograve;pia local:<br /> <br /> <br /> svn update<br /> <br /> <br /> Aix&iacute; ho actualitzem, tamb&eacute; &eacute;s important fer-ho freq&uuml;entment per tal de treballar sobre la &uacute;ltima c&ograve;pia que s&#39;hagi fet.<br /> <br /> Si volem tornar a agafar una versi&oacute; anterior, podem fer:<br /> <br /> <br /> svn update --revision 2<br /> <br /> <br /> (si fem svn help checkout veiem les opcions que tenim)<br /> <br /> Amb la comanda:<br /> <br /> <br /> svn log<br /> <br /> <br /> Podem veure els &uacute;ltims canvis que hi ha hagut, l&#39;usuari que els ha fet, la data i la descripci&oacute; que hi ha posat l&#39;usuari.<br /> <br /> I per &uacute;ltim, amb l&#39;ordre:<br /> <br /> <br /> svn diff<br /> <br /> <br /> Veurem, amb el format &quot;diff&quot; els canvis que hem fet<br /> <br /> M&eacute;s informaci&oacute;:<br /> <a href="http://svnbook.red-bean.com/svnbook/ch03s05.html">http://svnbook.red-bean.com/svnbook/ch03s05.html</a><br /> <br /> Carles Pina i Estany<br /> <a href="mailto:%20carles%20arroba%20pinux.info">carles arroba pinux.info</a><br /> <a href="http://pinux.info/">http://pinux.info</a>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

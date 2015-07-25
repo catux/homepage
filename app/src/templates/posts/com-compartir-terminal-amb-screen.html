@@ -1,0 +1,57 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Com compartir terminal amb screen
+    {% endblock %}
+
+    {% block author %}
+        franhp
+    {% endblock %}
+
+    {% block post_date %}
+        2011-07-29 13:04:33
+    {% endblock %}
+
+    {% block categories %}
+        Servidor, Trucs
+    {% endblock %}
+
+    {% block post %}
+        En aquest article m'agradaria presentar-vos una aplicació que m'ha salvat la vida últimament i de la que he descobert moltes coses sorprenents que no sabia encara que coneixia qué feia l'aplicació.
+
+Es tracta de "screen", una espècie de gestor de finestres per a terminal, es a dir, permet crear una terminal dintre de la terminal i recuperar-la en qualsevol moment des de qualsevol sessió (screen -r). També permet mantenir diverses terminals dintre de la mateixa terminal, com si es tractés d'un escriptori típic de GNU/Linux. Tot això i molt més a "man screen".
+
+No obstant, hi ha una cosa que és la que més m'ha sorprès i que no la he trobat ben explicada al manual i es com compartir una consola entre diversos usuaris, com el qui comparteix pantalla. Per realitzar aquesta tasca es necessari fer els següents passos.
+<ul>
+	<li>(Canviar el setuid root de screen ja que s'instal·la amb aquest bit desactivat i no permet que això funcioni)</li>
+</ul>
+<pre>sudo chmod +s /usr/bin/screen
+sudo chmod 755 /var/run/screen</pre>
+<ul>
+	<li>Crear una sessió (amb el paràmetre -S li podem posar un nom més bonic)</li>
+</ul>
+<pre>screen -S nomSessió</pre>
+<ul>
+	<li>Definir-la como a multiusuari</li>
+</ul>
+<pre>Ctrl-a :multiuser on</pre>
+<ul>
+	<li>Donar permisos a un usuari per veure la sessió</li>
+</ul>
+<pre>Ctrl-a :acladd usuari</pre>
+<ul>
+	<li>(Opcional)Para evitar que l'altre usuari pugui editar</li>
+</ul>
+<pre>Ctrl-a :aclchg usuari -w "#"</pre>
+<ul>
+	<li>L'altre usuari es pot connectar amb la següent comanda:</li>
+</ul>
+<pre>screen -x usuariAmbScreen/nomSessió</pre>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

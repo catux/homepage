@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        xfreedesktop
+    {% endblock %}
+
+    {% block author %}
+        mark
+    {% endblock %}
+
+    {% block post_date %}
+        2004-07-18 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Hola.<br /> Ara acabo d&#39;arrancar l&#39;xfreedesktop, que &eacute;s una lliure implementaci&oacute; de l&#39;xfree86 4.4.0 i, degut aix&ograve;, no perdem qualitat envers l&#39;xfree86... De fet, aparentment, no hi ha difer&egrave;ncia :-P<br /> Per Debian, hi ha un repositori &#39;no oficial&#39;:<br /> <br /> deb http://freedesktop.org/~jamey/debian testing main<br /> <br /> Aviso que si teniu l&#39;xfree86 instal&middot;lat (segurament), feu:<br /> <br /> # apt-get install -d fd.o-* -y<br /> <br /> i despr&eacute;s anar a /var/cache/apt/archives/ i fer:<br /> <br /> # dpkg --force- -i &quot;paquet&quot;<br /> <br /> amb tots els que us heu baixat abans perqu&egrave; sobreescriuran algunes coses de l&#39;xfree ;-D<br /> <br /> Sino sempre podeu baixar les fonts de http://x.org/ i a http://www.badopi.org/node/view/523 teniu com fer-ho</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">RE: xfreedesktop Ostres, dons és interessant, l'altre dia el pachups volia posar el x.org, però em sembla k provaré aquest també :P<p class="comment-author">Escrit al 2006-12-26 01:37:23 per whats_up</p></li>
+    {% endblock %}
+
+    

@@ -1,0 +1,55 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Comptant lletres
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2005-03-23 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Ahir de cop i volta i per motius que no venen al cas em vaig demanar quina &eacute;s la lletra menys utilitzada en angl&egrave;s.<br /> <br /> Amb la meva Debian, vaig anar r&agrave;pidament a /usr/share/dict i sortosament tenia instal&middot;lats els diccionaris american-english, catalan, spanish<br /> <br /> Seguidament escrivint:<br /> carles@pinux:/usr/share/dict$ for i in {a..z}; do echo &quot;$i $(grep -c -i $i american-english)&quot;; done | sort -n -k 2 | head -10<br /> Es veu que les lletres menys utilitzades s&oacute;n q, j, x; amb una proporci&oacute; d&#39;unes 44 vegades menys que les m&eacute;s utilitzades (i, e, s).<br /> <br /> Hi ha menys de 2000 paraules amb q o j; i m&eacute;s de 60000 amb e i s.<br /> <br /> En catal&agrave;, apart que el llistat de paraules &eacute;s m&eacute;s complet, w, k i h s&oacute;n les menys utilitzades i r, a i e les que m&eacute;s.<br /> <br /> Despr&eacute;s diuen que la consola no t&eacute; flexibilitat! M&eacute;s r&agrave;pid que aix&ograve; &eacute;s dif&iacute;cil!<br /> <br /> Es far&agrave; a Catux un curs de Bash (propers mesos, ja ho comentarem per aqu&iacute;), qui vulgui fer coses d&#39;aquest tipus ja sap on en pot aprendre.<br /> <br /> Nota: s&eacute; que podria haver-ho fet sense for i amb un fitxer amb les lletres i que el grep agaf&eacute;s les expressions d&#39;all&agrave;, ho he deixat tal com s&#39;em va acudir<br /> Nota2: {a..z} &eacute;s v&agrave;lid per Bash 3.0 i fa una llista de les lletres de l&#39;alfabet</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Re: Comptant lletres mmmm... curió. I ja que parlem de curiositats, només una més, i és que no he estat capaç de trobar el diccionari 'catalan'.
+
+Faig servir gentoo i la pròpia distribució no el porta. Fa estona que busco a la xarxa però no aconsegueixo trobar-lo. Com podria aconseguir-lo?
+
+Gràcies,<p class="comment-author">Escrit al 2006-12-29 00:35:29 per Anònim</p></li><li class="list-group-item comment">Re: Comptant lletres XDDDD vaya vacilada cpina XDD un article nomes per demostrar que saps bash?? aix...<p class="comment-author">Escrit al 2006-12-29 00:37:37 per Anònim</p></li><li class="list-group-item comment">Re: Comptant lletres A l'Anònim que no troba el diccionari, estan al paquet wcatalan i wspanish de Debian:
+http://packages.debian.org/unstable/text/wcatalan
+I es poden baixar sense amb .tar.gz... (la web per trobar paquets, o quin paquet conté un fitxer, és http://packages.debian.org)
+
+A l'Anònim de les 11:40, no és un article, és una noticia :-) (curiositat, més aviat). No és per demostrar que sé o no sé Bash (que n'hauria d'aprendre més, segurament), és per demostrar la potència/facilitat de Bash. I a més per "promocionar" una mica el curs de Catux de Bash quan es faci, obrir una mica els ulls a algú, etc.<p class="comment-author">Escrit al 2006-12-29 00:38:27 per cpina</p></li><li class="list-group-item comment">Re: Comptant lletres 
+Sóc l'anònim del diccionari.
+
+Pel que veig, el paquet wcatalan el que conté són els diccionaris ortogràfics que es fan servir per l'ispell, aspell o myspell. Jo em referia concretament als diccionaris que hi ha a '/usr/lib/dict' a la meva distribució i que són els que donen o bé la traducció de paraules o bé la definició, i no pas la correcció ortogràfica. I es fan servir sota el servidor 'dictd'.
+
+$ dict hello
+(i em surt la definició de 'hello' segons els diccionaris que tinc instal·lats).
+
+¿Ens hem entès o m'he perdut jo alguna cosa?
+
+En qualsevol cas, gràcies per la resposta<p class="comment-author">Escrit al 2006-12-29 00:39:07 per Anònim</p></li><li class="list-group-item comment">Re: Comptant lletres Ostres, doncs no ho sé perquè no faig servir dict...
+
+De totes maneres a Debian paquets relacionats amb dict i català no en veig cap, i amb dict i castellà veig:
+dict-freedict-eng-spa
+dict-freedict-spa-eng
+
+Que a més no són les definicions, són traduccions (suposo, pel nom)
+
+Això és el què sé :-)
+(de totes maneres no conec, apart del projecte diccionari de Wikipedia, cap diccionari en català lliure...)<p class="comment-author">Escrit al 2006-12-29 00:40:38 per cpina</p></li>
+    {% endblock %}
+
+    

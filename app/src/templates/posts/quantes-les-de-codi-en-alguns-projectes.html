@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Quantes línies de codi en alguns projectes?
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2006-03-08 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Estavem buscant informaci&oacute; de quantes l&iacute;nies de codi tenen alguns projectes de programari lliure i utilitzats en Linux per l&#39;escriptori. Tan sols per veure la magnitud de la feina. A vegades sense voler es dona massa import&agrave;ncia &quot;A Linux&quot; (Kernel) deixant de pensar en altres projectes. Els projectes que hem comtat les l&iacute;nies, amb el n&uacute;mero de l&iacute;nies, s&oacute;n:<br /> <br /> <li>OpenOffice: 5.122.932<br /> </li><li>Linux: 4.697.630<br /> </li><li>KDE: 4.302.915<br /> </li><li>Firefox: 2.679.939<br /> </li><li>Glibc: 856.467<br /> <br /> No hem sabut trobar cap estudi seri&oacute;s apart del <a href="http://es.tldp.org/Presentaciones/200103hispalinux/gonzalez/html/t1.html">&quot;Contando Patatas&quot;</a> (era de la Debian Potato, fa molts anys). Si alg&uacute; coneix algun estudi, que ho comenti...<br /> <br /> En cap cas &eacute;s per desmer&egrave;ixer/mer&egrave;ixer a projectes, ja que la quantitat de l&iacute;nies &eacute;s poc significatiu enfront a la complexitat/import&agrave;ncia/etc. sin&oacute; nom&eacute;s una curiositat. A m&eacute;s a m&eacute;s, jo diria que hem utilitzat m&eacute;s l&iacute;nies del Firefox que del Kernel que desactivem moltes coses, normalment.<br /> <br /> Les l&iacute;nies s&oacute;n de l&#39;&uacute;ltim codi font (en el cas del KDE de quasi tots els paquets que el conformen) i comptat amb l&#39;eina <a href="http://www.dwheeler.com/sloccount/">sloccount</a>.<br /> <br /> <strong>Actualitzaci&oacute;</strong>: <a href="http://libresoft.dat.escet.urjc.es/debian-counting/sarge/index.php?menu=Packages">enlla&ccedil; </a> amb les l&iacute;nies de codi per paquets de la Debian Sarge. OpenOffice, Kernel s&#39;assemblen. KDE per exemple no pas, ja que nosaltres vem comptar totes les l&iacute;nies dels paquets b&agrave;sics de KDE, i no surten a l&#39;estad&iacute;stica.</li></span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

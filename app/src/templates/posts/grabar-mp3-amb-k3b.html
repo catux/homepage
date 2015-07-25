@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Grabar MP3 amb K3B
+    {% endblock %}
+
+    {% block author %}
+        Mecatxis
+    {% endblock %}
+
+    {% block post_date %}
+        2009-01-09 14:07:11
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Trucs
+    {% endblock %}
+
+    {% block post %}
+        <p>L'altre dia necessitava gravar un CD d'audio des d'uns fitxers comprimits en MP3. Em vaig trobar amb la sorpresa que el K3B em demanava que els fitxers havien de ser WAV per poder realitzar la gravació.</p><p> Consultat-ho amb gent (gràcies Avalot i Pinucset) em van dir que ells no havien tingut cap problema per gravar MP3 en furmat audioCD i que el K3B els ho feia directament.</p><p><a href="http://jfibergran.wordpress.com/2007/04/25/k3b-mp3-instalando-el/">Estudiant una mica el tema</a> me'n vaig adonar que feia falta una llibreria del KDE, però la que diu el Fiber no és a Debian. El paquest ha quedatobsolet. En comptes d'aixó, cal fer:</p> <p> apt-get install libk3b2-mp3  </p><p> I reiniciar el K3B per poder començar a pasar els nostres fitxers MP3 a AudioCD!</p>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

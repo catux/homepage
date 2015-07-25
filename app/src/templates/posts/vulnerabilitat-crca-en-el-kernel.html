@@ -1,0 +1,32 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Vulnerabilitat crítica en el kernel
+    {% endblock %}
+
+    {% block author %}
+        Sachiel
+    {% endblock %}
+
+    {% block post_date %}
+        2004-06-15 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Afecta a les branques 2.4 i 2.6, nom&eacute;s se salva l&#39;&uacute;ltim 2.6.7-rc3. &Eacute;s vulnerable tot sistema amb acc&eacute;s shell o possibilitat d&#39;executar codi per qualsevol usuari, en m&agrave;quines i386 i amd64. Per cert, gentoo-sources-2.4.26 t&eacute; una versi&oacute; &quot;inn&ograve;cua&quot;.<br /> <br /> M&eacute;s informaci&oacute; a:<br /> http://linuxreviews.org/news/2004-06-11_kernel_crash/index.html<br /> http://slashdot.org/articles/04/06/14/118209.shtml?tid=106&amp;tid=126&amp;tid=128&amp;tid=185&amp;tid=190</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Nova versió 
+Un dia després de fer-se pública aquesta vulnerabilitat han tret la versió 2.6.7 final. És impressionant la de feina que fan en un mes... cada cop els diff's són més grans (aquest últim són 3MB comprimit).<p class="comment-author">Escrit al 2006-12-26 00:57:34 per jvprat</p></li><li class="list-group-item comment">RE: Vulnerabilitat crítica en 
+Dons quan va sortir el bug a la llum ja va ser quan es va arreglar a la rc3 del 2.6.7 Llavors Linus Torvalds, ja va anunciar que la 2.6.7 sortiria el dia 15, :P
+
+Sort!<p class="comment-author">Escrit al 2006-12-26 00:58:15 per whats_up</p></li>
+    {% endblock %}
+
+    

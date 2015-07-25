@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Samba 3.x, codificació del nom de fitxer: ISO-8859-15/UTF
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2006-12-17 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Articles, Servidor
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Treballant amb Samba 3.x es guarda per defecte el nom dels fitxers amb codificaci&oacute; UTF8. Aix&ograve;, en alguns casos pot no interessar: si no tenim el sistema sencer amb UTF8 i no ens interessa migrar.<br /> <br /> Amb aquest escrit veurem com fer que Samba 3.x desi els fitxers amb codificaci&oacute; ISO-8859-15 (o la del sistema), i tamb&eacute; com canviar el nom dels fitxers que tenim guardats d&#39;UTF8 a ISO-8859-15.<br /> </span><br />     Fa uns dies em vaig trobar amb una s&egrave;rie de problemes amb Samba. Tot i no ser &quot;molt dif&iacute;cil&quot; tenien el seu qu&egrave;, almenys per mi, que sempre em temo les codificacions de car&agrave;cters.<br /> <br /> No s&oacute;c un expert del tema. Nom&eacute;s exposar&eacute; el qu&egrave; vaig veure i com ho vaig solucionar. Hi pot haver alguna apreciaci&oacute; incorrecte, si &eacute;s aix&iacute; demano disculpes (i podeu deixar un comentari...)<br /> <br /> Exposar&eacute; nom&eacute;s els fets, no com vaig arribar a veure-ho tot plegat.<br /> <br /> <br /> <div id="article" class="article_normal"><li>Samba 2.x per defecte guarda els noms de fitxers amb ISO-8859-15 <u>o similar</u>, &eacute;s a dir, per defecte ho guarda amb el tipus de charset del sistema i no amb UTF<br /> </li><li>Samba 3.x per defecte ho guarda amb codificaci&oacute; UTF<br /> </li><li>La distribuci&oacute; que treballem guarda amb sistema ISO-8859-15, no UTF (era el cas concret)<br /> <br /> <br /> Si Samba guarda amb tipus UTF per&ograve; el sistema no, els car&agrave;cters amb accents es desdoblen (s&oacute;n dos car&agrave;cters erronis)<br /> <br /> Si volem fer fitxers al sitema o via Samba i que no hi hagi problemes amb accents, cal tenir-ho tot amb el mateix sistema. Sin&oacute;, quan es fan amb UTF (Samba 3.x per defecte) i no visualitzem amb UTF es veuen dos car&agrave;cters erronis quan hi ha accents. O b&eacute;, si el fitxer est&agrave; fet al sistema Samba mostrar&agrave; car&agrave;cters erronis, etc.<br /> <br /> <strong>Configurar Samba:</strong><br /> Si volem que Samba 3.x guardi en codificaci&oacute; ISO-8859-15 cal posar a /etc/samba/smb.conf, a la secci&oacute; general: unix charset = ISO-8859-15. Llavors els fitxers creats al sistema i via Samba no seran UTF i tot anir&agrave; b&eacute;. El unix charset hauria de ser igual que el del locale per defecte (si no volem tenir problemes, etc.)<br /> <br /> Tamb&eacute; es pot migrar el sistema a UTF, per&ograve; per varis motius no interessava.<br /> <br /> <strong>Canviar els noms dels fitxers ja existents:</strong><br /> Queda un tema pendent: qu&egrave; fer amb els fitxers que potser han estat creats amb UTF per&ograve; ara volem el seu nom codificat amb ISO-8859-15? Es pot fer servir el programa convmv, paquet a Debian amb el mateix nom. Es pot cridar perqu&egrave; canvi&iuml; tots els fitxers d&#39;un directori i subdirectoris de cop, per&ograve; no anava massa b&eacute; aix&iacute; que ho vaig fer fer d&#39;un amb un. Amb un script tipus:<br /> <br /> <br /> #!/bin/bash<br /> <br /> convmv -f utf8 -t iso-8859-15 --notest --qfrom --qto &quot;$1&quot;<br /> <br /> <br /> i llavors cridar a find amb:<br /> find . -depth -exec canvia.sh {} \;<br /> <br /> El -depth &eacute;s perqu&egrave; find primer processi els fitxers amb m&eacute;s profunditat i despr&eacute;s els de menys profunditat. Sin&oacute; podriem estar canviant el nom del directori pare d&#39;altres subdirectoris i que no es complet&eacute;s el canvi de nom.<br /> <br /> Un cop fet aix&ograve;, tindrem el sistema sense UTF (era un requeriment), el Samba 3.x treballant sense UTF i els fitxers nous i vells sense UTF.<br /> <br /> Canviant lleugerament tot plegat, es pot tenir Samba 2.x amb UTF, o podriem canviar els fitxers de ISO-8859-15 a UTF, etc. nom&eacute;s amb les eines vistes.</li></div>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

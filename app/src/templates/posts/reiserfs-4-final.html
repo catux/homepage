@@ -1,0 +1,30 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Reiserfs 4 final
+    {% endblock %}
+
+    {% block author %}
+        whats_up
+    {% endblock %}
+
+    {% block post_date %}
+        2004-08-24 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Ja el tenim aqu&iacute;!, la nova versi&oacute; d&#39;aquest avan&ccedil;at sistema de fitxers, que incorpora les seg&uuml;ents novetats entre les m&eacute;s destacades:<br /> <br /> * &Eacute;s l&#39;actual sistema de fitxers m&eacute;s r&agrave;pid. (<a href="http://www.namesys.com/benchmarks.html">Benchmarks</a>)<br /> <br /> * Incorpora algoritmes creats per dur a terme les accions de forma at&ograve;mica, i les que no ho s&oacute;n, no corrompen el sistema.<br /> <br /> * Utilitza un nou sistema intern anomenat &quot;dancing trees&quot; que deixa enrere l&#39;emprat fins ara &quot;balanced trees&quot;. Gr&agrave;cies a aix&ograve; s&#39;aprofita millor l&#39;espai i &eacute;s m&eacute;s esglaonable.<br /> <br /> * Est&agrave; basat en un sistema de connectors, la qual cosa fa que pugui rebre aportacions de codi d&#39;altres llocs sense haver de tornar a formatar el disc. Entre aquestes, suporta el xifrat a nivell de sistema de fitxers.<br /> <br /> * Est&agrave; fet amb un grau de seguretat militar. <br /> <br /> A partir d&#39;ara la versi&oacute; 3 de reiser nom&eacute;s ser&agrave; mantinguda per anar arreglant els errors que vagin sortint. <br /> <br /> Podeu trobar-ne m&eacute;s informaci&oacute; a la <a href="http://namesys.com/">p&agrave;gina oficial</a>.<br /> <br /> PD: Carles, suposo que ja l&#39;estar&agrave;s provant no? ;)</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Benchmarks 
+Segons mostra als benchmarks, la diferència és brutal. Semblarà que tinguem un disc dur el dobre de ràpid? :P<p class="comment-author">Escrit al 2006-12-28 14:34:33 per whats_up</p></li><li class="list-group-item comment">Notícies inèdites No se com us ho feu, però sempre estau posant notícies que no sa veuen enlloc.
+Vore el reiserfs... ;)<p class="comment-author">Escrit al 2006-12-28 14:35:25 per Anònim</p></li>
+    {% endblock %}
+
+    

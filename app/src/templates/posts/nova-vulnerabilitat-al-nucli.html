@@ -1,0 +1,28 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Nova vulnerabilitat al nucli.
+    {% endblock %}
+
+    {% block author %}
+        seoman
+    {% endblock %}
+
+    {% block post_date %}
+        2004-09-19 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">S&#39;han detectat dues vulnerabilitats al nucli de Linux. Aquestes dues vulnerabilitats, tan poden servir per bloquejar la m&agrave;quina atacada com per permetre executar codi arbitrari com a usuari root.<br /> <br /> Les dues vulnerabilitats s&oacute;n:<br /> <br /> * Un desbordament en el codi del servidor nfs. Aquest desbordament tant pot permetre el bloqueig com l&#39;execuci&oacute; de codi arbitrari. <br /> <br /> * Un usuari local pot penjar la m&agrave;quina vctima manipulant els fitxers especials &quot;/dev/ptmx&quot;.<br /> <br /> <br /> Encara no s&#39;han publicat els pegats per solucionar aix&ograve;, per&ograve; les versions &quot;2.6.9-rc2&quot; o &quot;2.4.28-pre3&quot; ja ho tenen corregit, tot i que s&oacute;n beta.<br /> <br /> Font: <a href="http://www.hispasec.com/unaaldia/2155/">Hispasec</a>.</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item">Sense comentaris</li>
+    {% endblock %}
+
+    

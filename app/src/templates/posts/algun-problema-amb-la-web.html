@@ -1,0 +1,31 @@
+
+    {% extends 'post_template.html' %}
+
+    {% block title %}
+        Algun problema amb la Web
+    {% endblock %}
+
+    {% block author %}
+        cpina
+    {% endblock %}
+
+    {% block post_date %}
+        2004-08-02 00:00:00
+    {% endblock %}
+
+    {% block categories %}
+        Notícies, Últimes notícies
+    {% endblock %}
+
+    {% block post %}
+        <span class="noticia">Sembla que ja fa uns dies que tenim algun problema amb la Web.<br /> <br /> Estem mirant qu&egrave; &eacute;s (problema de codi amb PHP? Mysql? algun bug?).<br /> <br /> El resultat de cara a l&#39;usuari &eacute;s que no es carrega la p&agrave;gina principal b&eacute;, sin&oacute; que mostra un tros de men&uacute; lateral i es queda &quot;pensant&quot; el navegador.<br /> <br /> Aix&iacute; que ja sabeu, &quot;estem en el tema&quot;.<br /> <br /> Gr&agrave;cies per la paci&egrave;ncia...<br /> <br /> <strong>Actualitzaci&oacute; 18:46:</strong> he arreglat una cosa i sembla que pot ser aix&ograve;. A veure si tenim sort :-)<br /> <strong>Actualitzaci&oacute; 22:11, 4 d&#39;Agost:</strong> finalment he pogut arreglar el qu&egrave; era. La culpa era meva. Un problema de RSS i proves amb un altre servidor. Disculpeu les molesties despres de l&#39;errada m&eacute;s que humana, ara ja no s&#39;obrir&agrave; m&eacute;s a mitges la p&agrave;gina web, esperem.</span>
+    {% endblock %}
+
+    {% block comments %}
+        <li class="list-group-item comment">Servidor nou 
+Per sort aviat tindrem un servidor d'alt standing nou no? :P
+Ja tinc ganes de tenir-lo jejeje<p class="comment-author">Escrit al 2006-12-28 13:56:28 per whats_up</p></li><li class="list-group-item comment">Ets un crack! Ja va de conya.
+A corregir articles s'ha dit!<p class="comment-author">Escrit al 2006-12-28 13:57:04 per Anònim</p></li>
+    {% endblock %}
+
+    
