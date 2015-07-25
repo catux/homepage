@@ -45,7 +45,7 @@
 
     <h2>Llista de programes que hem traduït fins ara per odre alfabètic</h2>
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="thumbnail-modal" tabindex="-1" role="dialog" aria-labelledby="thumbnail-modal-label" aria-hidden="true">
           <div class="modal-dialog">
                 <div class="modal-content">
                       <div class="modal-body">
@@ -210,12 +210,12 @@ $(document).ready(function(){
    $('.thumbnail img').on('click',function(){
         var src = $(this).attr('src');
         var img = '<img src="' + src + '" class="img-responsive"/>';
-        $('#myModal').modal();
-        $('#myModal').on('shown.bs.modal', function(){
-            $('#myModal .modal-body').html(img);
+        $('#thumbnail-modal').modal();
+        $('#thumbnail-modal').on('shown.bs.modal', function(){
+            $('#thumbnail-modal .modal-body').html(img);
         });
-        $('#myModal').on('hidden.bs.modal', function(){
-            $('#myModal .modal-body').html('');
+        $('#thumbnail-modal').on('hidden.bs.modal', function(){
+            $('#thumbnail-modal .modal-body').html('');
         });
    });
 })
