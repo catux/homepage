@@ -1,0 +1,23 @@
+/* TRADUCCIO
+-------------------------------------------------- */
+
+.traduccio {
+  background-color: $alt-color;
+
+  h1 {
+    color: darken($secondary-color, 50%);
+  }
+
+  .miniatura  {
+
+    .thumbnail img {
+      height: 120px;
+      width: 170px;
+    }
+
+    .thumbnail {
+      height: 310px;
+    }
+  }
+
+}

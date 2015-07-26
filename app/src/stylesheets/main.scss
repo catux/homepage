@@ -1,4 +1,6 @@
 @import "variables";
+@import "blog";
+@import "traduccio";
 @import "../../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 @import "../../../bower_components/fontawesome/scss/font-awesome.scss";
 
@@ -7,6 +9,9 @@
 
 body {
   padding-top: 87px;
+  @media (max-width: $screen-sm-max) {
+    padding-top: 50px;
+  }
   padding-bottom: 20px;
   color: $secondary-color;
   background-color: $primary-color;
@@ -74,13 +79,33 @@ body {
 -------------------------------------------------- */
 
 .carousel {
-  min-height: 600px;
-  //margin-bottom: 60px;
+  //min-height: 600px;
 
   .item {
     min-height: 600px;
+    @media (max-width: $screen-md-max) {
+      min-height: 400px;
+    }
     background-color: $secondary-color;
   }
+
+  .first-slide {
+    background: url('/images/Slider1.jpg') no-repeat center;
+    background-size: cover;
+  }
+  .second-slide {
+    background: url('/images/Slider2.png') no-repeat center;
+    background-size: cover;
+  }
+  .third-slide {
+    background: url('/images/Slider3.jpg') no-repeat center;
+    background-size: cover;
+  }
+  .last-slide {
+    background: url('/images/Slider4.png') no-repeat center;
+    background-size: cover;
+  }
+
 }
 
 .carousel-caption {
@@ -107,7 +132,7 @@ body {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media (min-width: 768px) {
+@media (min-width: $screen-md-min) {
   .navbar-wrapper {
     margin-top: 20px;
 
@@ -132,78 +157,5 @@ body {
 }
 
 
-/* BLOG ARCHIVE
--------------------------------------------------- */
-
-.arxius {
-  background-color: $alt-color;
-  padding-bottom: 50px;
-
-  h1 {
-    font-size: 3em;
-    color: $secondary-color;
-  }
-
-  .blog-post {
-    font-weight: bold;
-  }
-
-  .blog-date {
-    background-color: $primary-color;
-    border: 1px solid $secondary-color;
-  }
-
-}
-
-/* SINGLE POSTS
--------------------------------------------------- */
-.post {
-  margin-top: 10px;
-  padding-left: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  background-color: $alt-color;
-
-  h1 {
-    color: darken($secondary-color, 50%);
-  }
-
-  h3 {
-    font-size: small;
-  }
-
-  p {
-    color: black;
-    padding-right: 5%;
-  }
-
-  .comment-author {
-    padding-top: 5px;
-    text-align: right;
-  }
-}
 
 
-/* TRADUCCIO
--------------------------------------------------- */
-
-.traduccio {
-  background-color: $alt-color;
-
-  h1 {
-    color: darken($secondary-color, 50%);
-  }
-
-  .miniatura  {
-    
-    .thumbnail img {
-      height: 120px;
-      width: 170px;
-    }
-
-    .thumbnail {
-      height: 310px;
-    }
-  }
-
-}
