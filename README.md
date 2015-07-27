@@ -49,8 +49,17 @@ virtualenv venv
 . venv/bin/activate
 pip install -r requirements.txt
 grunt
-???
-PROFIT!
+```
+
+* Recordeu modificar la variable homepage que forma tots els enllaços
+
+Al fitxer `app/src/templates/context/_all.json` 
+
+```
+ {
+-  "homepage": "http://catux.org/"
++  "homepage": "http://localhost:9000/"
+ }
 ```
 
 
