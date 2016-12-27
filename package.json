@@ -4,7 +4,7 @@
   "dependencies": {},
   "author": "Catux",
   "devDependencies": {
-    "grunt": "latest",
+    "grunt": "~0.4.1",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-compass": "latest",
     "grunt-contrib-connect": "latest",
