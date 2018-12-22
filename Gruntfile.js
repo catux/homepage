@@ -103,9 +103,9 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        cwd: 'bower_components/fontawesome/fonts/',
+                        cwd: 'bower_components/fontawesome/webfonts/',
                         src: '**/*',
-                        dest: 'app/public/fonts/'
+                        dest: 'app/public/webfonts/'
                     }
                 ]
 
