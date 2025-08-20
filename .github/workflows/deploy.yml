@@ -41,8 +41,8 @@ jobs:
 
       - name: Copy build to destination
         run: |
-          # Remove all files from destination except .git and distribucions directory
-          find destination -mindepth 1  -not -name '.git' -not -name 'distribucions' -exec rm -rf {} \;
+          # Remove all files from destination except .git and distribucions subdirectories
+          find destination -mindepth 1 -not -path '*/.git' -not -path '*/distribucions/catux/*' -not -name 'CNAME' -type f -delete;
 
           # Copy all built files to destination
           cp -r source/app/public/* destination/
