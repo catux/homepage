@@ -1,19 +1,55 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<div class="container-fluid traduccio">
-    <h1>Contactar</h1>
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h1 class="card-title mb-4 text-center">Contactar</h1>
 
-    <p>A Catux ens agrada ajudar i és per això que hem habilitat diversos canals per poder contactar amb nosaltres:</p>
+                    <p class="lead text-center mb-5">A Catux ens agrada ajudar i és per això que hem habilitat diversos canals per poder contactar amb nosaltres:</p>
 
-    <ul>
-    	<li><h3>Llista de correu</h3> <a href="https://llistes.catux.org/cgi-bin/mailman/listinfo">https://llistes.catux.org/cgi-bin/mailman/listinfo</a></li>
-    	<li><h3>Informació</h3> <p><a href="mailto:info@catux.org">info@catux.org</a></p></li>
-    	<li><h3>Telegram</h3></li>
-    </ul>
+                    <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+                                    <h5 class="card-title">Llista de correu</h5>
+                                    <p class="card-text">
+                                        <a href="https://llistes.catux.org/cgi-bin/mailman/listinfo" class="btn btn-outline-primary mt-2">Subscriu-te</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-	<hr>
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-info-circle fa-3x mb-3 text-primary"></i>
+                                    <h5 class="card-title">Informació</h5>
+                                    <p class="card-text">
+                                        <a href="mailto:info@catux.org" class="btn btn-outline-primary mt-2">info@catux.org</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="fab fa-telegram fa-3x mb-3 text-primary"></i>
+                                    <h5 class="card-title">Telegram</h5>
+                                    <p class="card-text">
+                                        <a href="https://t.me/+UaRevB06YidmYTY0" class="btn btn-outline-primary mt-2">Uneix-te al grup</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
 {% endblock %}

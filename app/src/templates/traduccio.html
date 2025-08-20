@@ -1,98 +1,160 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container-fluid traduccio">
-    <h1>Traduccions de Catux</h1>
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-sm mb-5">
+                <div class="card-body p-4">
+                    <h1 class="card-title text-center mb-4">Traduccions de Catux</h1>
 
-    <p>A Catux col·laborem a més amb el món del programari lliure traduint algunes aplicacions al català.</p>
+                    <div class="row mb-4">
+                        <div class="col-lg-6">
+                            <h3 class="h4 mb-3"><i class="fas fa-language me-2 text-primary"></i>El nostre procés</h3>
+                            <p>La selecció de programes que traduïm, com podeu veure, és molt diversa i eclèctica.
+                            El sistema d'elecció depèn directament dels traductors, però s'accepten els vostres suggeriments!</p>
 
-    <p>La selecció de programes que traduïm, com podeu veure, és molt diversa i eclèctica.
-        El sistema d'elecció depèn directament dels traductors, però s'accepten els vostres suggeriments!</p>
+                            <p>El procés de traducció comença amb la selecció del programa a traduir.
+                            Mirem quins fitxers cal traduir, si ja hi ha algú treballant en la traducció
+                            al català i ens posem en contacte amb els desenvolupadors per comunicar-los
+                            que volem traduir el seu programa i si els sembla correcte.</p>
 
-    <p>Per la traducció emprem diferents recursos, com ara:</p>
+                            <p>A mida que es va fent la traducció, una segona persona revisa la traducció
+                            i es discuteixen els desacords. Per coordinar-ho tot plegat disposem d'una llista de correu.</p>
 
-    <ul>
-        <li>
-            Els recursos dels companys de <a href="https://softcatala.org">Softcatalà</a> particularment la
-            <a href="https://www.softcatala.org/wiki/Guia_d%27estil/Guia_2010">guia d'estil</a>
-            i el <a href="https://www.softcatala.org/recursos/terminologia.html"> glossari</a>.
-        </li>
-        <li>Els serveis del termcat, com el <a href="http://www.termcat.cat/ca/Cercaterm/">cercaterm</a>.</li>
-        <li>Diccionaris bilingües com ara <a href="http://www.wordreference.com/">wordreference</a>.</li>
-        <li>Diccionaris de català com ara el <a href="http://dlc.iec.cat/"> diec</a>.</li>
-    </ul>
+                            <div class="d-grid gap-2 col-md-8 mx-auto mt-4">
+                                <a href="https://llistes.catux.org/cgi-bin/mailman/listinfo/traduccio" class="btn btn-primary">
+                                    <i class="fas fa-envelope me-2"></i>Subscriu-te a la llista de traducció
+                                </a>
+                            </div>
+                        </div>
 
+                        <div class="col-lg-6">
+                            <h3 class="h4 mb-3"><i class="fas fa-tools me-2 text-primary"></i>Eines i recursos</h3>
 
-    <p>El procés de traducció comença amb la selecció del programa a traduir.
-        Mirem quins fitxers cal traduir, si ja hi ha algú treballant en la traducció
-        al català i ens posem en contacte amb els desenvolupadors per comunicar-los
-        que volem traduir el seu programa i si els sembla correcte.</p>
+                            <div class="card mb-3">
+                                <div class="card-header bg-light">Recursos de referència</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <i class="fas fa-book me-2 text-muted"></i>
+                                        Els recursos dels companys de <a href="https://softcatala.org" class="text-decoration-none">Softcatalà</a>:
+                                        <a href="https://www.softcatala.org/wiki/Guia_d%27estil/Guia_2010" class="text-decoration-none">guia d'estil</a> i
+                                        <a href="https://www.softcatala.org/recursos/terminologia.html" class="text-decoration-none">glossari</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-search me-2 text-muted"></i>
+                                        Els serveis del termcat, com el <a href="http://www.termcat.cat/ca/Cercaterm/" class="text-decoration-none">cercaterm</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-language me-2 text-muted"></i>
+                                        Diccionaris bilingües com <a href="http://www.wordreference.com/" class="text-decoration-none">wordreference</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-book-open me-2 text-muted"></i>
+                                        Diccionaris de català com el <a href="http://dlc.iec.cat/" class="text-decoration-none">diec</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="fas fa-file-code me-2 text-muted"></i>
+                                        Habitualment els programes font usen un format estàndard de traducció basat en fitxers de tipus
+                                        «po» que es diu «gettext». Per tractar aquests fitxers de manera amigable, utilitzem: <a href="https://poedit.net/">Poedit</a> o <a href="https://wiki.gnome.org/Apps/Gtranslator">Gtranslator</a>
+                                    </li>
+                                </ul>
+                            </div>
 
-    <p>Habitualment els programes font usen un format estàndard de traducció basat en fitxers de tipus
-        «po» que es diu «gettext» (https://ca.wikipedia.org/wiki/Gettext). Per tractar aquests fitxers de manera amigable, usem els programes:</p>
+                            <!-- <div class="card">
+                                <div class="card-header bg-light">Programes de traducció</div>
+                                <div class="card-body">
+                                    <p>Habitualment els programes font usen un format estàndard de traducció basat en fitxers de tipus
+                                    «po» que es diu «gettext» (<a href="https://ca.wikipedia.org/wiki/Gettext" class="text-decoration-none">més info</a>).</p>
+                                    <p class="mb-0">Per tractar aquests fitxers de manera amigable, utilitzem:</p>
+                                    <div class="row mt-3">
+                                        <div class="col-6 text-center">
+                                            <a href="https://poedit.net/" class="btn btn-outline-secondary">
+                                                <i class="fas fa-file-code me-2"></i>Poedit
+                                            </a>
+                                        </div>
+                                        <div class="col-6 text-center">
+                                            <a href="https://wiki.gnome.org/Apps/Gtranslator" class="btn btn-outline-secondary">
+                                                <i class="fas fa-language me-2"></i>Gtranslator
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
 
-    <ul>
-        <li><a href="https://poedit.net/">poedit</a></li>
-        <li><a href="https://wiki.gnome.org/Apps/Gtranslator">gtranslator</a></li>
-    </ul>
+                    <hr class="my-1" />
 
-    <p>A mida que es va fent la traducció, una segona persona revisa la traducció
-        i es discuteixen els desacords. Per coordinar-ho tot plegat disposem d'una llista de correu.
-        Us hi podeu donar d'alta a <a href="http://catux.org/mailman/listinfo/traduccio">http://catux.org/mailman/listinfo/traduccio</a>.
-    </p>
+    <h2 class="text-center mb-4"><i class="fas fa-globe me-2"></i>Programes traduïts</h2>
 
-    <hr />
-
-    <h2>Llista de programes que hem traduït fins ara per odre alfabètic</h2>
-    <br >
-
+    <!-- Modal for image preview -->
     <div class="modal fade" id="thumbnail-modal" tabindex="-1" role="dialog" aria-labelledby="thumbnail-modal-label" aria-hidden="true">
-          <div class="modal-dialog">
-                <div class="modal-content">
-                      <div class="modal-body">
-                      </div>
-                </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="thumbnail-modal-label">Previsualització</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="row">
-
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         {% for traduccio in traduccions %}
-            <div class="col-sm-6 col-md-3 miniatura">
-                <div class="thumbnail">
-                    <img src="{{ homepage }}images/traduccio-screens/{{ traduccio.imatge }}" width="255">
-                    <div class="caption">
-                        <h4>{{ traduccio.nom }}</h4>
-                        <p>
-                            {{ traduccio.descripcio }}
-                        </p>
-                        <p>
-                            <a role="button" class="btn btn-primary" href="{{ traduccio.link }}">Enllaç <i class="fas fa-external-link-alt"></i></a>
-                        </p>
+            <div class="col">
+                <div class="card h-100 shadow-sm hover-card">
+                    <div class="card-img-container">
+                        <img src="{{ homepage }}images/traduccio-screens/{{ traduccio.imatge }}"
+                             class="card-img-top img-fluid"
+                             alt="{{ traduccio.nom }}"
+                             data-bs-toggle="modal"
+                             data-bs-target="#thumbnail-modal"
+                             style="height: 160px; object-fit: cover; cursor: pointer;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">{{ traduccio.nom }}</h5>
+                        <p class="card-text flex-grow-1">{{ traduccio.descripcio }}</p>
+                        <div class="text-end mt-3">
+                            <a role="button" class="btn btn-sm btn-primary" href="{{ traduccio.link }}">
+                                Visita el projecte <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         {% endfor %}
-
     </div>
-
-
 </div>
-
-
+<!-- JavaScript for modal image preview -->
 <script language="JavaScript">
-$(document).ready(function(){
-   $('.thumbnail img').on('click',function(){
-        var src = $(this).attr('src');
-        var img = '<img src="' + src + '" class="img-responsive"/>';
-        $('#thumbnail-modal').modal();
-        $('#thumbnail-modal').on('shown.bs.modal', function(){
-            $('#thumbnail-modal .modal-body').html(img);
+    document.addEventListener('DOMContentLoaded', function() {
+        const modalBody = document.querySelector('#thumbnail-modal .modal-body');
+        const modalTitle = document.querySelector('#thumbnail-modal .modal-title');
+
+        document.querySelectorAll('.card-img-top').forEach(img => {
+            img.addEventListener('click', function() {
+                const title = this.closest('.card').querySelector('.card-title').textContent;
+                modalTitle.textContent = title;
+                modalBody.innerHTML = `<img src="${this.src}" class="img-fluid" alt="${title}">`;
+            });
         });
-        $('#thumbnail-modal').on('hidden.bs.modal', function(){
-            $('#thumbnail-modal .modal-body').html('');
-        });
-   });
-})
+    });
+
+    $(document).ready(function(){
+    $('.thumbnail img').on('click',function(){
+            var src = $(this).attr('src');
+            var img = '<img src="' + src + '" class="img-responsive"/>';
+            $('#thumbnail-modal').modal();
+            $('#thumbnail-modal').on('shown.bs.modal', function(){
+                $('#thumbnail-modal .modal-body').html(img);
+            });
+            $('#thumbnail-modal').on('hidden.bs.modal', function(){
+                $('#thumbnail-modal .modal-body').html('');
+            });
+    });
+    })
 </script>
 {% endblock %}

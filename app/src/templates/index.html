@@ -1,61 +1,62 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div id="homepage-carousel" class="carousel slide" data-ride="carousel">
+    <!-- Main Carousel -->
+    <div id="homepage-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#homepage-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#homepage-carousel" data-slide-to="1"></li>
-            <li data-target="#homepage-carousel" data-slide-to="2"></li>
-            <li data-target="#homepage-carousel" data-slide-to="3"></li>
-        </ol>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#homepage-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
 
-        <!-- Wrapper for slide -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active first-slide">
+        <!-- Carousel items -->
+        <div class="carousel-inner rounded shadow-sm">
+            <div class="carousel-item active first-slide">
                 <div class="container">
-                    <div class="carousel-caption titol-portada">
-                        <p>Activa des del 2003, l'associació ha potenciat l'ús de Programari Lliure per tota Catalunya mitjançant xerrades, Install Parties, stands d'informació, ...</p>
+                    <div class="carousel-caption p-4 rounded">
+                        <h2 class="fw-bold">Catux</h2>
+                        <p class="lead">Activa des del 2003, l'associació ha potenciat l'ús de Programari Lliure per tota Catalunya mitjançant xerrades, Install Parties, stands d'informació, ...</p>
                     </div>
                 </div>
             </div>
-            <div class="item second-slide">
+            <div class="carousel-item second-slide">
                 <div class="container">
-                    <div class="carousel-caption titol-portada">
-                        <h1>Traduccions</h1>
-                        <p>Contribuïm a la comunitat realitzant traduccions al Català de diverses aplicaciones de Programari Lliure. </p>
+                    <div class="carousel-caption p-4 rounded">
+                        <h2 class="fw-bold">Traduccions</h2>
+                        <p class="lead">Contribuïm a la comunitat realitzant traduccions al Català de diverses aplicaciones de Programari Lliure.</p>
                     </div>
                 </div>
             </div>
-            <div class="item third-slide">
-
+            <div class="carousel-item third-slide">
                 <div class="container">
-                    <div class="carousel-caption titol-portada">
-                        <h1>Catux-USB</h1>
-                        <p>Pioners en l'ús de distribucions "live" per a pendrives que poden desar el seu estat a disc. </p>
+                    <div class="carousel-caption p-4 rounded">
+                        <h2 class="fw-bold">Catux-USB</h2>
+                        <p class="lead">Pioners en l'ús de distribucions "live" per a pendrives que poden desar el seu estat a disc.</p>
                     </div>
                 </div>
             </div>
-            <div class="item last-slide">
+            <div class="carousel-item last-slide">
                 <div class="container">
-                    <div class="carousel-caption titol-portada">
-                        <h1>Més coses!</h1>
-                        <p>Disposem de una llista de distribució per xerrar sobre programari lliure, muntem una aula d'informàtica utilitzant només programari lliure per la Universitat Catalana d'Estiu, fem una trobada per sopar cada nadal i moltes altres coses!</p>
+                    <div class="carousel-caption p-4 rounded">
+                        <h2 class="fw-bold">Més coses!</h2>
+                        <p class="lead">Disposem de una llista de distribució per xerrar sobre programari lliure, muntem una aula d'informàtica utilitzant només programari lliure per la Universitat Catalana d'Estiu, fem una trobada per sopar cada nadal i moltes altres coses!</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Carousel controls -->
-        <a class="left carousel-control" href="#homepage-carousel" role="button" data-slide="prev">
-            <i class="fletxeta fas fa-chevron-left" aria-hidden="true"></i>
-            <span class="sr-only">Prèvia</span>
-        </a>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homepage-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Prèvia</span>
+        </button>
 
-        <a class="right carousel-control" href="#homepage-carousel" role="button" data-slide="next">
-            <i class="fletxeta fas fa-chevron-right" aria-hidden="true"></i>
-            <span class="sr-only">Següent</span>
-        </a>
+        <button class="carousel-control-next" type="button" data-bs-target="#homepage-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Següent</span>
+        </button>
 
     </div> <!-- ./carousel -->
 

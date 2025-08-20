@@ -1,0 +1,24 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+        exclude: app/src/templates/posts/
+    -   id: trailing-whitespace
+        exclude: app/src/templates/posts/
+    -   id: check-json
+    -   id: pretty-format-json
+        args: ["--indent", "4", "--autofix"]
+        exclude: package-lock.json
+
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.12.9
+  hooks:
+    - id: ruff-check
+    - id: ruff-format
+
+- repo: https://github.com/standard/standard
+  rev: v17.1.2
+  hooks:
+    - id: standard

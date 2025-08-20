@@ -1,76 +1,76 @@
 {
-  "traduccions": [
-    {
-      "nom": "cups",
-      "imatge": "cups.png",
-      "descripcio": "Sistema d'impressió modular per a sistemes operatius de tipus Unix que permet que un ordinador actui com a servidor d'impressió",
-      "link": "https://www.cups.org/"
-    },
-    {
-      "nom": "e2fsprog",
-      "imatge": "e2fsprog.png",
-      "descripcio": "Conjunt d'eines per al manteniment dels sistemes de fitxers ext2, ext3 i ext4",
-      "link": "http://e2fsprogs.sourceforge.net/"
-    },
-    {
-      "nom": "Freedink",
-      "imatge": "freedink.png",
-      "descripcio": "Vídeo joc d'acció i elements de rol tipus Zelda",
-      "link": "http://www.gnu.org/software/freedink/"
-    },
-    {
-      "nom": "geeqie",
-      "imatge": "geeqie.png",
-      "descripcio": "Visor i organitzador de fotografies avançat",
-      "link": "http://geeqie.sourceforge.net/"
-    },
-    {
-      "nom": "gPlanarity",
-      "imatge": "gplanarity.png",
-      "descripcio": "Joc tipus puzzle on cal desembolicar els fils per aconseguir l'objectiu d'interseccions màximes",
-      "link": "http://web.mit.edu/xiphmont/Public/gPlanarity.html"
-    },
-    {
-      "nom": "grep",
-      "imatge": "grep.png",
-      "descripcio": "És un comandament que es fa servir des de la consola o terminal per a cercar text mitjançant expressions regulars",
-      "link": "http://www.gnu.org/software/grep/"
-    },
-    {
-      "nom": "grub",
-      "imatge": "grub.png",
-      "descripcio": "Gestor d'engegada múltiple que es fa servir normalment per a engegar dos o més sistemes operatius instal·lats al mateix ordinador",
-      "link": "http://www.gnu.org/software/grub/"
-    },
-    {
-      "nom": "Lordsawar",
-      "imatge": "lordsawar.png",
-      "descripcio": "Joc d'estratègia per torns on els teus herois han d'aconseguir el control de tots els castells.",
-      "link": "http://www.nongnu.org/lordsawar/"
-    },
-    {
-      "nom": "pyDance",
-      "imatge": "pydance.png",
-      "descripcio": "Joc per ballar amb una estora les teves cançons preferides",
-      "link": "https://icculus.org/pyddr/"
-    },
-    {
-      "nom": "tar",
-      "imatge": "tar.png",
-      "descripcio": "Programa per consola que empaqueta i desempaqueta fitxers",
-      "link": "http://www.gnu.org/software/tar/"
-    },
-    {
-      "nom": "Unknown Horizons",
-      "imatge": "unknown-horizons.png",
-      "descripcio": "Joc d'estratègia en temps real basat en la construcció d'una ciutat i la gestió de la seva economia.",
-      "link": "http://www.unknown-horizons.org/"
-    },
-    {
-      "nom": "Warzone 2100",
-      "imatge": "warzone.jpeg",
-      "descripcio": "Joc d'estratègia militar en temps real basada en tancs.",
-      "link": "https://wz2100.net/"
-    }
-  ]
+    "traduccions": [
+        {
+            "descripcio": "Sistema d'impressi\u00f3 modular per a sistemes operatius de tipus Unix que permet que un ordinador actui com a servidor d'impressi\u00f3",
+            "imatge": "cups.png",
+            "link": "https://www.cups.org/",
+            "nom": "cups"
+        },
+        {
+            "descripcio": "Conjunt d'eines per al manteniment dels sistemes de fitxers ext2, ext3 i ext4",
+            "imatge": "e2fsprog.png",
+            "link": "http://e2fsprogs.sourceforge.net/",
+            "nom": "e2fsprog"
+        },
+        {
+            "descripcio": "V\u00eddeo joc d'acci\u00f3 i elements de rol tipus Zelda",
+            "imatge": "freedink.png",
+            "link": "http://www.gnu.org/software/freedink/",
+            "nom": "Freedink"
+        },
+        {
+            "descripcio": "Visor i organitzador de fotografies avan\u00e7at",
+            "imatge": "geeqie.png",
+            "link": "http://geeqie.sourceforge.net/",
+            "nom": "geeqie"
+        },
+        {
+            "descripcio": "Joc tipus puzzle on cal desembolicar els fils per aconseguir l'objectiu d'interseccions m\u00e0ximes",
+            "imatge": "gplanarity.png",
+            "link": "http://web.mit.edu/xiphmont/Public/gPlanarity.html",
+            "nom": "gPlanarity"
+        },
+        {
+            "descripcio": "\u00c9s un comandament que es fa servir des de la consola o terminal per a cercar text mitjan\u00e7ant expressions regulars",
+            "imatge": "grep.png",
+            "link": "http://www.gnu.org/software/grep/",
+            "nom": "grep"
+        },
+        {
+            "descripcio": "Gestor d'engegada m\u00faltiple que es fa servir normalment per a engegar dos o m\u00e9s sistemes operatius instal\u00b7lats al mateix ordinador",
+            "imatge": "grub.png",
+            "link": "http://www.gnu.org/software/grub/",
+            "nom": "grub"
+        },
+        {
+            "descripcio": "Joc d'estrat\u00e8gia per torns on els teus herois han d'aconseguir el control de tots els castells.",
+            "imatge": "lordsawar.png",
+            "link": "http://www.nongnu.org/lordsawar/",
+            "nom": "Lordsawar"
+        },
+        {
+            "descripcio": "Joc per ballar amb una estora les teves can\u00e7ons preferides",
+            "imatge": "pydance.png",
+            "link": "https://icculus.org/pyddr/",
+            "nom": "pyDance"
+        },
+        {
+            "descripcio": "Programa per consola que empaqueta i desempaqueta fitxers",
+            "imatge": "tar.png",
+            "link": "http://www.gnu.org/software/tar/",
+            "nom": "tar"
+        },
+        {
+            "descripcio": "Joc d'estrat\u00e8gia en temps real basat en la construcci\u00f3 d'una ciutat i la gesti\u00f3 de la seva economia.",
+            "imatge": "unknown-horizons.png",
+            "link": "http://www.unknown-horizons.org/",
+            "nom": "Unknown Horizons"
+        },
+        {
+            "descripcio": "Joc d'estrat\u00e8gia militar en temps real basada en tancs.",
+            "imatge": "warzone.jpeg",
+            "link": "https://wz2100.net/",
+            "nom": "Warzone 2100"
+        }
+    ]
 }
