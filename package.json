@@ -10,7 +10,7 @@
         "chokidar-cli": "^3.0.0",
         "concurrently": "^8.2.2",
         "copyfiles": "^2.4.1",
-        "esbuild": "^0.25.0",
+        "esbuild": "^0.28.1",
         "glob": "^11.1.0",
         "nunjucks": "^3.2.4",
         "sass": "^1.72.0"
